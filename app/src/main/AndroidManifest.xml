@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_projects">
-        <activity android:name=".Login_Sing_up_Activity"></activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".Splash_Screen_2" />
         <activity android:name=".Splash_Screen_1" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login_Sing_up_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
