@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animate1"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/kanbanboardanimation" />
+
+    <TextView
+        android:id="@+id/Welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/animate1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/welcome_to_task_management"
+        android:textSize="25sp"
+        android:textColor="#0C0E15"/>
+
+    <TextView
+        android:id="@+id/Welcome_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Welcome_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/welcome_to_task_management"
+        android:textSize="20sp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animate2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        app:lottie_autoPlay="true"
+        app:lottie_colorFilter="#962DCD"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/shaptow" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animate3"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/animate2"
+        android:layout_marginTop="150dp"
+        app:lottie_autoPlay="true"
+        app:lottie_colorFilter="#F6B531"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/shap"
+        app:lottie_speed="0.8" />
+
+</RelativeLayout>
