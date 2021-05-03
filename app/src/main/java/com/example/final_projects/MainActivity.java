@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.final_projects.Fragment.Abou_Us_Fragment;
 import com.example.final_projects.Fragment.Home_Fragment;
 import com.example.final_projects.Fragment.Profile_Fragment;
 import com.google.android.material.navigation.NavigationView;
@@ -51,24 +52,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new Profile_Fragment()).commit();
                 break;
         }
-//        switch (item.getItemId()){
-//            case R.id.nav_home:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new Home_Fragment()).commit();
-//                break;
-//        }
-//        switch (item.getItemId()){
-//            case R.id.nav_home:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new Home_Fragment()).commit();
-//                break;
-//        }
-//        switch (item.getItemId()){
-//            case R.id.nav_home:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new Home_Fragment()).commit();
-//                break;
-//        }
+        switch (item.getItemId()){
+            case R.id.nav_Language:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Home_Fragment()).commit();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_sitting:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Home_Fragment()).commit();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_about_us:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Abou_Us_Fragment()).commit();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_logout:
+
+                break;
+        }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
