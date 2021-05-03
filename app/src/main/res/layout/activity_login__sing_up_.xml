@@ -28,7 +28,7 @@
 
     <EditText
         android:id="@+id/edit_email"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
@@ -46,7 +46,7 @@
 
     <EditText
         android:id="@+id/edit_pass"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_below="@+id/edit_email"
         android:layout_centerHorizontal="true"

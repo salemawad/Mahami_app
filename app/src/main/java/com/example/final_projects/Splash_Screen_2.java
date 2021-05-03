@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class Splash_Screen_2 extends AppCompatActivity {
-    private static int SPLASH_SCREEN = 5000;
+    private static int SPLASH_SCREEN = 2500;
     private Animation animation;
     private LottieAnimationView animationView;
     private TextView textView1, textView2;
