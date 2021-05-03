@@ -45,6 +45,4 @@ dependencies {
     implementation 'com.github.sujithkanna:smileyrating:2.0.0'
     implementation 'com.airbnb.android:lottie:3.4.0'
     implementation 'com.github.sujithkanna:smileyrating:2.0.0'
-
-
 }

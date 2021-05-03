@@ -1,7 +1,5 @@
 package com.example.final_projects;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +7,8 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -38,7 +38,7 @@ public class Splash_Screen_2 extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent2 = new Intent(Splash_Screen_2.this, MainActivity.class);
+                Intent intent2 = new Intent(Splash_Screen_2.this, Login_Sing_up_Activity.class);
                 startActivity(intent2);
             }
         }, SPLASH_SCREEN);
