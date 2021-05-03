@@ -133,6 +133,19 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
     }
 
     //==================================================================================================
+
+
+    @Override
+    protected void onStart() {
+        if (mAtu.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        } else {
+            startActivity(new Intent(getApplicationContext(), Login_Sing_up_Activity.class));
+        }
+        finish();
+        super.onStart();
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -140,5 +153,6 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
             progressDialog.dismiss();
         }
     }
+
 }
 

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_projects">
-        <activity android:name=".Splah_Dilog"></activity>
+        <activity android:name=".Splah_Dilog" />
         <activity android:name=".Login_Sing_up_Activity" />
         <activity android:name=".Splash_Screen_2" />
         <activity
