@@ -76,7 +76,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         switch (item.getItemId()){
             case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plan");
+                share.putExtra(Intent.EXTRA_SUBJECT, "ShearApp");
+                startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
                 break;
         }
         switch (item.getItemId()){
