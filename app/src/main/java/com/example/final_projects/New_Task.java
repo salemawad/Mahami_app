@@ -93,10 +93,13 @@ public class New_Task extends AppCompatActivity {
         OnDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int day, int month, int year) {
+                month = month+1;
                 Log.d(TAG, "onDateSet: date: " + day + "/" + month + "/" + year);
                 String date = day + "/" + month + "/" + year;
+
                 data_btn.setText(date);
             }
+
         };
     }
 }
