@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".New_Task"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:autofillHints="0"
+        android:background="@drawable/edite_text"
+        android:gravity="center_horizontal"
+        android:hint="@string/task_name"
+        android:inputType="textEmailAddress"
+        android:paddingTop="7dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_dis"
+        android:layout_width="332dp"
+        android:layout_height="215dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/sheapedit"
+        android:gravity="center"
+        android:hint="@string/description"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edit_set_time"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:autofillHints="0"
+        android:background="@drawable/edite_text"
+        android:gravity="center_horizontal"
+        android:hint="@string/set_time"
+        android:inputType="textEmailAddress"
+        android:paddingTop="7dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_set_data"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:autofillHints="0"
+        android:background="@drawable/edite_text"
+        android:gravity="center_horizontal"
+        android:hint="@string/set_data"
+        android:inputType="textEmailAddress"
+        android:paddingTop="7dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="159dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shaep_b"
+        android:text="@string/submit"
+        android:textColor="@color/white" />
+</LinearLayout>

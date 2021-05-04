@@ -1,4 +1,4 @@
-package com.example.final_projects.Fragment;
+package com.example.final_projects;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.final_projects.R;
-
-public class Abou_Us_Fragment extends Fragment {
-
+public class New_Task extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home,container,false);
+        return inflater.inflate(R.layout.activity_new__task,container,false);
     }
 }

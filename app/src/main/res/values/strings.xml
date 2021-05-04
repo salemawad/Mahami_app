@@ -10,12 +10,19 @@
     <string name="new_task" translatable="false">New Task</string>
     <string name="task_manger" translatable="false">Task Manger</string>
     <string name="About_us" translatable="false">About Us</string>
-    <string name="Feedbakc" translatable="false">Feedback</string>
+    <string name="Feedback" translatable="false">Feedback</string>
     <string name="Bio">Bio</string>
     <string name="Profile">Profile</string>
     <string name="user_name">User Name</string>
     <string name="set_data">Set Data</string>
     <string name="Submit">Submit</string>
+    <string name="task_name">Task Name</string>
+    <string name="description">Description</string>
+    <string name="set_time">Set Time</string>
+    <string name="submit">Submit</string>
+    <string name="send_feed" >Send</string>
+    <string name="Discrip">What is your impression of the application</string>
+    <string name="add_a_comment">Add Feedback</string>
 
 
 </resources>
