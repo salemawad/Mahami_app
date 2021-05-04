@@ -91,7 +91,7 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
                     public void onSuccess(AuthResult authResult) {
                         progressDialog.dismiss();
                         finish();
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -133,18 +133,6 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
     }
 
     //==================================================================================================
-
-
-//    @Override
-//    protected void onStart() {
-//        if (mAtu.getCurrentUser() != null) {
-//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//        } else {
-//            startActivity(new Intent(getApplicationContext(), Login_Sing_up_Activity.class));
-//        }
-//        finish();
-//        super.onStart();
-//    }
 
     @Override
     protected void onPause() {

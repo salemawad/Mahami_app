@@ -51,7 +51,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/date_picker_actions"
+        android:id="@+id/date_Button"
         android:layout_width="350dp"
         android:layout_height="50sp"
         android:layout_gravity="center"
@@ -67,7 +67,7 @@
         android:textSize="17sp"/>
 
     <Button
-        android:id="@+id/time_picker_actions"
+        android:id="@+id/time_Button"
         android:layout_width="350dp"
         android:layout_height="50sp"
         android:layout_gravity="center"
