@@ -1,7 +1,9 @@
 package com.example.final_projects;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -57,12 +59,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new Profile_Fragment()).commit();
                 break;
         }
-        switch (item.getItemId()){
-            case R.id.nav_logout:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Profile_Fragment()).commit();
-                break;
-        }
+//        switch (item.getItemId()){
+//            case R.id.nav_logout:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                        new Profile_Fragment()).commit();
+//                break;
+//        }
 //        switch (item.getItemId()){
 //            case R.id.nav_sitting:
 //                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -76,12 +78,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                break;
 //        }
 
-//        if (item.getItemId() == R.id.nav_logout){
-////            mAtu.signOut();
-////            Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();
-////            finish();
-//            startActivity(new Intent(MainActivity.this , Profile_Fragment.class));
-//        }
+        if (item.getItemId() == R.id.nav_logout){
+
+              Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();
+            mAtu.signOut();
+          finishAffinity();
+            startActivity(new Intent(MainActivity.this , Login_Sing_up_Activity.class));
+        }
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
