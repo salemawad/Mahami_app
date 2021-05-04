@@ -59,35 +59,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new Profile_Fragment()).commit();
                 break;
         }
-//        switch (item.getItemId()){
-//            case R.id.nav_logout:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new Profile_Fragment()).commit();
-//                break;
-//        }
-//        switch (item.getItemId()){
-//            case R.id.nav_sitting:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new Home_Fragment()).commit();
-//                break;
-//        }
-//        switch (item.getItemId()){
-//            case R.id.nav_about_us:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        new Home_Fragment()).commit();
-//                break;
-//        }
+        switch (item.getItemId()){
+            case R.id.nav_Language:
+                Toast.makeText(this, "Language", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_sitting:
+                Toast.makeText(this, "Sitting", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_about_us:
+                Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_share:
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        switch (item.getItemId()){
+            case R.id.nav_about_us:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Home_Fragment()).commit();
+                break;
+        }
 
-        if (item.getItemId() == R.id.nav_logout){
+        if (item.getItemId() == R.id.nav_logout) {
 
-              Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();
             mAtu.signOut();
-          finishAffinity();
-            startActivity(new Intent(MainActivity.this , Login_Sing_up_Activity.class));
+            finishAffinity();
+            startActivity(new Intent(MainActivity.this, Login_Sing_up_Activity.class));
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
-
 
     }
 

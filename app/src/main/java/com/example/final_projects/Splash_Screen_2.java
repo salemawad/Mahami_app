@@ -11,18 +11,22 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Splash_Screen_2 extends AppCompatActivity {
     private static int SPLASH_SCREEN = 5000;
     private Animation animation;
     private LottieAnimationView animationView;
     private TextView textView1, textView2;
+    FirebaseAuth mAtu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__screen_2);
 
 
+        mAtu = FirebaseAuth.getInstance();
 
         animationView = findViewById(R.id.animate1);
         textView1 = findViewById(R.id.Welcome_text);
@@ -40,7 +44,7 @@ public class Splash_Screen_2 extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent2 = new Intent(Splash_Screen_2.this, MainActivity.class);
+                Intent intent2 = new Intent(Splash_Screen_2.this, Splah_Dilog.class);
                 startActivity(intent2);
             }
         }, SPLASH_SCREEN);

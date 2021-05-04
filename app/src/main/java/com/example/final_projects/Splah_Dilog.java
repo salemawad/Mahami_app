@@ -14,11 +14,13 @@ public class Splah_Dilog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splah__dilog);
+        mAtu = FirebaseAuth.getInstance();
         if (mAtu.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         } else {
-            startActivity(new Intent(getApplicationContext(), Splash_Screen_1.class));
+            startActivity(new Intent(getApplicationContext(), Login_Sing_up_Activity.class));
         }
         finish();
     }
+
 }
