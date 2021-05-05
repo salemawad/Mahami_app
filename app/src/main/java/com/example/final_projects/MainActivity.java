@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_share:
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plan");
-                share.putExtra(Intent.EXTRA_SUBJECT, "ShearApp");
+                String shareBody = "Task Management";
+                share.putExtra(Intent.EXTRA_SUBJECT, shareBody);
                 startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
                 break;
         }

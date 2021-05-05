@@ -6,7 +6,7 @@
     tools:context=".New_Task"
     android:orientation="vertical">
     <EditText
-        android:id="@+id/edit_name"
+        android:id="@+id/edit_name_new_task"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
@@ -23,7 +23,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edit_dis"
+        android:id="@+id/edit_dis_new_task"
         android:layout_width="332dp"
         android:layout_height="215dp"
         android:layout_gravity="center"
@@ -67,12 +67,23 @@
         android:textStyle="bold"
         android:textSize="17sp"/>
     <Button
-        android:id="@+id/button_send"
+        android:id="@+id/Submit_Button_new_task"
         android:layout_width="159dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@drawable/shaep_b"
         android:text="@string/submit"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/View_task"
+        android:layout_width="159dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shaep_b"
+        android:text="View Task On DB"
+        android:textAllCaps="false"
         android:textColor="@color/white" />
 </LinearLayout>
