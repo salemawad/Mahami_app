@@ -86,4 +86,6 @@
         android:text="View Task On DB"
         android:textAllCaps="false"
         android:textColor="@color/white" />
+
+<!--    This is a new Activity-->
 </LinearLayout>
