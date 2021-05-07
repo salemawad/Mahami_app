@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Final_projects</string>
-    <string name="welcome_to_task_management">Welcome To Ask Management</string>
+    <string name="welcome_to_task_management">Welcome To Task Management</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="welcome_Splash2">Leave all your tasks to us</string>
     <string name="welcome_2_Splash_2">Rare it to you as it should be</string>
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
-    <string name="Ques" translatable="false">What Would You do ?</string>
-    <string name="new_task" translatable="false">New Task</string>
-    <string name="task_manger" translatable="false">Task Manger</string>
-    <string name="About_us" translatable="false">About Us</string>
-    <string name="Feedback" translatable="false">Feedback</string>
+    <string name="Ques">What Would You do ?</string>
+    <string name="new_task">New Task</string>
+    <string name="task_manger">Task Manger</string>
+    <string name="About_us">About Us</string>
+    <string name="Feedback">Feedback</string>
     <string name="Bio">Bio</string>
     <string name="Profile">Profile</string>
     <string name="user_name">User Name</string>
@@ -20,10 +20,24 @@
     <string name="description">Description</string>
     <string name="set_time">Set Time</string>
     <string name="submit">Submit</string>
-    <string name="send_feed" >Send</string>
+    <string name="send_feed">Send</string>
     <string name="Discrip">What is your impression of the application</string>
     <string name="add_a_comment">Add Feedback</string>
     <string name="set_timer">Set Time</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="login">LogIn</string>
+    <string name="singup">SingUp</string>
+    <string name="forgetpssowrd">ForgetPssowrd ?</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="language">Language</string>
+    <string name="sitting">Sitting</string>
+    <string name="communicate">Communicate</string>
+    <string name="about_us">About Us</string>
+    <string name="share">Share</string>
+    <string name="exit">Exit</string>
+    <string name="log_out">Log Out</string>
 
 
 </resources>

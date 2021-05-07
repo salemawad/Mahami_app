@@ -1,12 +1,17 @@
 package com.example.final_projects;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -17,6 +22,8 @@ import com.example.final_projects.Fragment.Profile_Fragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     FirebaseAuth mAtu;
@@ -24,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocal();
         setContentView(R.layout.activity_main);
         mAtu = FirebaseAuth.getInstance();
         //============================================Nav_Casting===========================================
@@ -61,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         switch (item.getItemId()){
             case R.id.nav_Language:
+                Showdialog();
+
+
+
                 Toast.makeText(this, "Language", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -100,6 +112,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
+    }
+
+    private void Showdialog() {
+        final  String[] lis_String = {"Arabic","English"};
+        AlertDialog.Builder  builder= new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Change in progress");
+        builder.setSingleChoiceItems(lis_String, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+           if (which==0){
+               setLocal("AR");
+               recreate();
+           } else {
+               setLocal("EN");
+               recreate();
+           }
+           dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog= builder.create();
+        alertDialog.show();
+
+    }
+
+    private void setLocal(String lang) {
+        Locale locale=new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration configuration=new Configuration();
+        configuration.locale=locale;
+        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+
+        //save data to shared preferences
+        SharedPreferences.Editor editor= getSharedPreferences("Setting",MODE_PRIVATE).edit();
+        editor.putString("lang",lang);
+        editor.apply();
+
+    }
+    // load language saved in shared preferences
+    public  void loadLocal(){
+        SharedPreferences sharedPreferences= getSharedPreferences("Setting", Activity.MODE_PRIVATE);
+        String language = sharedPreferences.getString("lang","");
+        setLocal(language);
     }
 
     @Override

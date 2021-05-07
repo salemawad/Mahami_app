@@ -1,6 +1,7 @@
 package com.example.final_projects.Fragment;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,8 +28,11 @@ public class Home_Fragment extends Fragment {
         new_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new_text.setBackground(getResources().getDrawable(R.drawable.onclick));
+
                 Intent intent=new Intent(getActivity(), New_Task.class);
                 startActivity(intent);
+
 
             }
         });
@@ -37,12 +41,44 @@ public class Home_Fragment extends Fragment {
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                feedback.setBackground(getResources().getDrawable(R.drawable.onclick));
+
+
                 Intent intent=new Intent(getActivity(), Feedback_Ativity.class);
                 startActivity(intent);
 
             }
         });
-    return view;
+
+
+        final CardView task_mange = view.findViewById(R.id.task_mange);
+        task_mange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                task_mange.setBackground(getResources().getDrawable(R.drawable.onclick));
+//                Intent intent=new Intent(getActivity(), New_Task.class);
+//                startActivity(intent);
+
+            }
+        });
+
+        final CardView sitting = view.findViewById(R.id.sitting);
+        sitting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sitting.setBackground(getResources().getDrawable(R.drawable.onclick));
+
+//                Intent intent=new Intent(getActivity(), Feedback_Ativity.class);
+//                startActivity(intent);
+
+            }
+        });
+
+
+
+
+        return view;
+
 
     }
 }

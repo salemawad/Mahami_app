@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Final_projects</string>
+    <string name="welcome_to_task_management">مرحبًا بكم في إدارة المهام</string>
+    <string name="welcome_back">مرحبا بعودتك</string>
+    <string name="welcome_Splash2">اترك كل مهامك لنا</string>
+    <string name="welcome_2_Splash_2">نادر لك كما ينبغي</string>
+    <string name="navigation_drawer_open"> افتح درج التنقل</string>
+    <string name="navigation_drawer_close"> أغلق درج التنقل</string>
+    <string name="Ques">ماذا كنت ستفعل ؟</string>
+    <string name="new_task">مهمة جديدة</string>
+    <string name="task_manger">مدير المهام</string>
+    <string name="About_us">معلومات عنا</string>
+    <string name="Feedback">تعليق</string>
+    <string name="Bio">السيرة الذاتية</string>
+    <string name="Profile">الملف الشخصي</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="set_data">تعيين التاريخ</string>
+    <string name="Submit">إرسال</string>
+    <string name="task_name">اسم المهمة</string>
+    <string name="description">وصف</string>
+    <string name="set_time">ضبط الوقت</string>
+    <string name="submit">إرسال</string>
+    <string name="send_feed">إرسال</string>
+    <string name="Discrip">ما هو انطباعك عن التطبيق</string>
+    <string name="add_a_comment">أضف ملاحظات</string>
+    <string name="set_timer">ضبط الوقت</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمه السر</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="singup">التسجيل</string>
+    <string name="forgetpssowrd">هل نسيت كلمة السر ؟</string>
+    <string name="home">الرئيسية</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="language">اللغة</string>
+    <string name="sitting">الإعدادات</string>
+    <string name="communicate">التواصل</string>
+    <string name="about_us">معلومات عنا</string>
+    <string name="share">مشاركة التطبيق</string>
+    <string name="exit">الخروج</string>
+    <string name="log_out">تسجيل خروج</string>
+
+
+</resources>

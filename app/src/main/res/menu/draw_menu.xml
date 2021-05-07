@@ -6,39 +6,39 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="Home" />
+            android:title="@string/home" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
-            android:title="Profile" />
+            android:title="@string/profile" />
         <item
             android:id="@+id/nav_Language"
             android:icon="@drawable/ic_language"
-            android:title="Language" />
+            android:title="@string/language" />
         <item
             android:id="@+id/nav_sitting"
             android:icon="@drawable/ic_settings"
-            android:title="Sitting" />
+            android:title="@string/sitting" />
 
     </group>
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
             <item
                 android:id="@+id/nav_about_us"
                 android:icon="@drawable/ic_about_us"
-                android:title="About Us" />
+                android:title="@string/about_us" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_share"
-                android:title="Share" />
+                android:title="@string/share" />
         </menu>
     </item>
-    <item android:title="Exit">
+    <item android:title="@string/exit">
         <menu>
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_log_out"
-                android:title="Log Out"/>
+                android:title="@string/log_out"/>
         </menu>
     </item>
 </menu>
