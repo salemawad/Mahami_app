@@ -67,26 +67,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new Profile_Fragment()).commit();
                 break;
         }
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_Language:
                 Showdialog();
-
 
 
                 Toast.makeText(this, "Language", Toast.LENGTH_SHORT).show();
                 break;
         }
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_sitting:
                 Toast.makeText(this, "Sitting", Toast.LENGTH_SHORT).show();
                 break;
         }
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_about_us:
                 Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
                 break;
         }
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_share:
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plan");
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
                 break;
         }
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_about_us:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Home_Fragment()).commit();
@@ -115,44 +114,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void Showdialog() {
-        final  String[] lis_String = {"Arabic","English"};
-        AlertDialog.Builder  builder= new AlertDialog.Builder(MainActivity.this);
+        final String[] lis_String = {"Arabic", "English"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Change in progress");
         builder.setSingleChoiceItems(lis_String, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-           if (which==0){
-               setLocal("AR");
-               recreate();
-           } else {
-               setLocal("EN");
-               recreate();
-           }
-           dialog.dismiss();
+                if (which == 0) {
+                    setLocal("AR");
+                    recreate();
+                } else {
+                    setLocal("EN");
+                    recreate();
+                }
+                dialog.dismiss();
             }
         });
-        AlertDialog alertDialog= builder.create();
+        AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
     }
 
     private void setLocal(String lang) {
-        Locale locale=new Locale(lang);
+        Locale locale = new Locale(lang);
         Locale.setDefault(locale);
-        Configuration configuration=new Configuration();
-        configuration.locale=locale;
-        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
 
         //save data to shared preferences
-        SharedPreferences.Editor editor= getSharedPreferences("Setting",MODE_PRIVATE).edit();
-        editor.putString("lang",lang);
+        SharedPreferences.Editor editor = getSharedPreferences("Setting", MODE_PRIVATE).edit();
+        editor.putString("lang", lang);
         editor.apply();
 
     }
+
     // load language saved in shared preferences
-    public  void loadLocal(){
-        SharedPreferences sharedPreferences= getSharedPreferences("Setting", Activity.MODE_PRIVATE);
-        String language = sharedPreferences.getString("lang","");
+    public void loadLocal() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE);
+        String language = sharedPreferences.getString("lang", "");
         setLocal(language);
     }
 

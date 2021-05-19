@@ -11,9 +11,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25sp"
+        android:fontFamily="sans-serif-black"
         android:text="@string/Profile"
+        android:textColor="#434175"
         android:textSize="25sp"
-        android:textStyle="bold"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/profile_photo"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#D5D5D5"
         />
 
     <EditText
@@ -51,36 +61,21 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/date_Button"
+        android:id="@+id/Upload_Photo_btn"
         android:layout_width="350dp"
         android:layout_height="50sp"
         android:layout_gravity="center"
         android:layout_marginTop="30sp"
         android:background="@drawable/login_btn_background"
         android:gravity="center_horizontal"
-        android:hint="@string/set_data"
+        android:hint="@string/upload_photo"
         android:paddingTop="13dp"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/time_Button"
-        android:layout_width="350dp"
-        android:layout_height="50sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30sp"
-        android:background="@drawable/login_btn_background"
-        android:gravity="center_horizontal"
-        android:hint="@string/set_data"
-        android:paddingTop="13dp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
 
     <Button
         android:id="@+id/Submit_Button"
@@ -95,8 +90,8 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
