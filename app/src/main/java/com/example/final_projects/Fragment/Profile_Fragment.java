@@ -34,13 +34,9 @@ public class Profile_Fragment extends Fragment implements IPickResult {
     ProgressDialog progressDialog;
     ImageView Photo;
     Button sendPhoto;
+    PickResult r;
 
 
-    @Override
-    public void  onPickResult  (PickResult r) {
-        Photo.setImageBitmap(r.getBitmap());
-        userImage = r.getUri();
-    }
 
     @Nullable
     @Override
@@ -96,7 +92,13 @@ public class Profile_Fragment extends Fragment implements IPickResult {
                 }
             }
         });
+        Photo.setImageBitmap(r.getBitmap());
+        userImage = r.getUri();
         return view;
     }
 
+    @Override
+    public void onPickResult(PickResult r) {
+
+    }
 }
