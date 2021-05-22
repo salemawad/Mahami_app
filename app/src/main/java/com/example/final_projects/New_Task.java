@@ -1,36 +1,33 @@
 package com.example.final_projects;
 
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import com.example.final_projects.Alarm.Alarm_Receiver;
+import com.example.final_projects.Alarm.TimePickerFragment;
 import com.example.final_projects.DBHelper.DBHelper;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
-public class New_Task extends AppCompatActivity implements View.OnClickListener{
+public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
     private Button data_btn, time_btn;
     private static final String TAG = "New_Task";
@@ -55,74 +52,74 @@ public class New_Task extends AppCompatActivity implements View.OnClickListener{
         View_Task = findViewById(R.id.View_task);
 
         //====================================================================TIME BUTTON=========================================================================
-        time_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //تعريف time picker dialog
-
-                TimePickerDialog timePickerDialog1 = new TimePickerDialog(
-                        New_Task.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                t2Hour = hourOfDay;
-                                t2Minute = minute;
-                                //تخزين الساعة والدقائق ك نص
-                                String time = t2Hour + ":" + t2Minute;
-                                //جعل الفورمات 24 ساعة
-                                @SuppressLint("SimpleDateFormat") SimpleDateFormat f24hour = new SimpleDateFormat(
-                                        "HH:mm"
-                                );
-                                try {
-                                    Date data = f24hour.parse(time);
-                                    @SuppressLint("SimpleDateFormat") SimpleDateFormat f12Hour = new SimpleDateFormat(
-                                            "hh:mm:aa"
-                                    );
-                                    //Set selected time on text view
-                                    assert data != null;
-                                    time_btn.setText(f12Hour.format(data));
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        }, 12, 0, false
-
-                );
-                //Set transparent background
-                timePickerDialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                //Displayed previous selected time
-                timePickerDialog1.updateTime(t2Hour, t2Minute);
-                //Show Dialog
-                timePickerDialog1.show();
-            }
-        });
-//===========================================================DATE BUTTON====================================================================================
-        data_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                year = cal.get(Calendar.YEAR);
-                month = cal.get(Calendar.MONTH);
-                day = cal.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog dialog = new DatePickerDialog(
-                        New_Task.this, android.R.style.
-                        Theme_Holo_Light_Dialog_MinWidth, OnDateSetListener, year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
-            }
-        });
-        OnDateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int day, int month, int year) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: date: " + day + "/" + month + "/" + year);
-                String date = day + "/" + month + "/" + year;
-
-                data_btn.setText(date);
-            }
-
-        };
+//        time_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //تعريف time picker dialog
+//
+//                TimePickerDialog timePickerDialog1 = new TimePickerDialog(
+//                        New_Task.this,
+//                        new TimePickerDialog.OnTimeSetListener() {
+//                            @Override
+//                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+//                                t2Hour = hourOfDay;
+//                                t2Minute = minute;
+//                                //تخزين الساعة والدقائق ك نص
+//                                String time = t2Hour + ":" + t2Minute;
+//                                //جعل الفورمات 24 ساعة
+//                                @SuppressLint("SimpleDateFormat") SimpleDateFormat f24hour = new SimpleDateFormat(
+//                                        "HH:mm"
+//                                );
+//                                try {
+//                                    Date data = f24hour.parse(time);
+//                                    @SuppressLint("SimpleDateFormat") SimpleDateFormat f12Hour = new SimpleDateFormat(
+//                                            "hh:mm:aa"
+//                                    );
+//                                    //Set selected time on text view
+//                                    assert data != null;
+//                                    time_btn.setText(f12Hour.format(data));
+//                                } catch (ParseException e) {
+//                                    e.printStackTrace();
+//                                }
+//
+//                            }
+//                        }, 12, 0, false
+//
+//                );
+//                //Set transparent background
+//                timePickerDialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                //Displayed previous selected time
+//                timePickerDialog1.updateTime(t2Hour, t2Minute);
+//                //Show Dialog
+//                timePickerDialog1.show();
+//            }
+//        });
+////===========================================================DATE BUTTON====================================================================================
+//        data_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Calendar cal = Calendar.getInstance();
+//                year = cal.get(Calendar.YEAR);
+//                month = cal.get(Calendar.MONTH);
+//                day = cal.get(Calendar.DAY_OF_MONTH);
+//                DatePickerDialog dialog = new DatePickerDialog(
+//                        New_Task.this, android.R.style.
+//                        Theme_Holo_Light_Dialog_MinWidth, OnDateSetListener, year, month, day);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                dialog.show();
+//            }
+//        });
+//        OnDateSetListener = new DatePickerDialog.OnDateSetListener() {
+//            @Override
+//            public void onDateSet(DatePicker view, int day, int month, int year) {
+//                month = month + 1;
+//                Log.d(TAG, "onDateSet: date: " + day + "/" + month + "/" + year);
+//                String date = day + "/" + month + "/" + year;
+//
+//                data_btn.setText(date);
+//            }
+//
+//        };
         //===========================================================================
         //Listener For insert data into SQLite Database Table (UserDetails)
         submit.setOnClickListener(new View.OnClickListener() {
@@ -155,9 +152,8 @@ public class New_Task extends AppCompatActivity implements View.OnClickListener{
                 while (res.moveToNext()) {
                     buffer.append("Task Name :").append(res.getString(0)).append("\n");
                     buffer.append("Description :").append(res.getString(1)).append("\n");
-                    buffer.append("Date Of Task :").append(res.getString(2)).append("\n\n");
+                    buffer.append("Date Of Task :").append(res.getString(2)).append("\n");
                     buffer.append("Time Of Task :").append(res.getString(3)).append("\n");
-//                    buffer.append("Date Of Birth :").append(res.getString(2)).append("\n\n");
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(New_Task.this);
                 builder.setCancelable(true);
@@ -166,26 +162,36 @@ public class New_Task extends AppCompatActivity implements View.OnClickListener{
                 builder.show();
             }
         });
-    }
 
-    @Override
-    public void onClick(View v){
-        //set Notify Id & Text
-        submit.setOnClickListener(new View.OnClickListener() {
+        //=================================================================================
+        time_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(New_Task.this, Alarm_Receiver.class);
-                intent.putExtra("notificationId", notificationId);
-                intent.putExtra("todo", editName.getText().toString());
-                //getBroadcast(context, requestCode, intent, flags)
-                PendingIntent alarmIntent = PendingIntent.getBroadcast(New_Task.this, 0, intent,
-                        PendingIntent.FLAG_CANCEL_CURRENT);
-                AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-                alarm.set(AlarmManager.RTC_WAKEUP,t2Minute,alarmIntent);
-                Toast.makeText(New_Task.this, "Done!", Toast.LENGTH_SHORT).show();
-
-            }
+            public void onClick(View v) {
+                DialogFragment timePicker = new TimePickerFragment();
+                timePicker.show(getSupportFragmentManager(), "time picker");            }
         });
+    }
+    //=================================================================================
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY,hourOfDay);
+        c.set(Calendar.MINUTE,minute);
+        c.set(Calendar.SECOND,0);
+        startAlarm(c);
+    }
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void startAlarm(Calendar c){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, Alarm_Receiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1,intent,0);
+        if(c.before(Calendar.getInstance())){
+            c.add(Calendar.DATE,1);
+        }
+
+        // Initialize Our Alarm
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
     }
 
 }
