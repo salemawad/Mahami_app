@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,7 +28,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     FirebaseAuth mAtu;
-
+    TextView name_header;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        name_header = findViewById(R.id.text_name_header);
         //============================================Nav_Config===========================================
         navigationView.setNavigationItemSelectedListener(MainActivity.this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -50,7 +52,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     new Home_Fragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
+//        Bundle extra = getIntent().getExtras();
+//        String text = extra.getString("Next Screen");
+//        name_header.setText(text);
     }
+    //============================================Nav_Config===========================================
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -112,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
 
     }
+    //============================================Language_Config===========================================
 
     private void Showdialog() {
         final String[] lis_String = {"Arabic", "English"};

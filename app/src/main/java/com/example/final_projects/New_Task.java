@@ -1,8 +1,11 @@
 package com.example.final_projects;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -19,6 +22,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.final_projects.Alarm.Alarm_Receiver;
 import com.example.final_projects.DBHelper.DBHelper;
 
 import java.text.ParseException;
@@ -26,21 +30,22 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class New_Task extends AppCompatActivity {
+public class New_Task extends AppCompatActivity implements View.OnClickListener{
 
     private Button data_btn, time_btn;
     private static final String TAG = "New_Task";
     private DatePickerDialog.OnDateSetListener OnDateSetListener;
     int t2Hour, t2Minute, year, month, day;
-    Button submit, View_Task;
+    public Button submit, View_Task;
     DBHelper DB;
+    private int notificationId = 1;
+    public EditText editDis ,editName;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new__task);
         DB = new DBHelper(this);
-
 
         data_btn = findViewById(R.id.date_picker_actions);
         time_btn = findViewById(R.id.time_picker_actions);
@@ -54,6 +59,7 @@ public class New_Task extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //تعريف time picker dialog
+
                 TimePickerDialog timePickerDialog1 = new TimePickerDialog(
                         New_Task.this,
                         new TimePickerDialog.OnTimeSetListener() {
@@ -78,8 +84,10 @@ public class New_Task extends AppCompatActivity {
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
+
                             }
                         }, 12, 0, false
+
                 );
                 //Set transparent background
                 timePickerDialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -159,5 +167,26 @@ public class New_Task extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onClick(View v){
+        //set Notify Id & Text
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(New_Task.this, Alarm_Receiver.class);
+                intent.putExtra("notificationId", notificationId);
+                intent.putExtra("todo", editName.getText().toString());
+                //getBroadcast(context, requestCode, intent, flags)
+                PendingIntent alarmIntent = PendingIntent.getBroadcast(New_Task.this, 0, intent,
+                        PendingIntent.FLAG_CANCEL_CURRENT);
+                AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
+                alarm.set(AlarmManager.RTC_WAKEUP,t2Minute,alarmIntent);
+                Toast.makeText(New_Task.this, "Done!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
 }
 

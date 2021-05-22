@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">المشروع النهائي</string>
     <string name="welcome_to_task_management">مرحبًا بكم في تطبيق إدارة المهام</string>
+    <string name="welcome_to_task_management2">هيا بنا >>></string>
     <string name="welcome_back">مرحبا بعودتك</string>
     <string name="welcome_Splash2">اترك كل مهامك لنا</string>
     <string name="welcome_2_Splash_2">ندير لك كل مهامك كما ينبغي </string>
