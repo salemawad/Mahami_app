@@ -1,7 +1,6 @@
 package com.example.final_projects.Fragment;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.final_projects.MainActivity;
 import com.example.final_projects.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,11 +30,13 @@ public class Profile_Fragment extends Fragment implements IPickResult {
 
     FirebaseStorage firebaseStorage;
     StorageReference reference;
-    public Uri userImage = null;
+    Uri userImage = null;
     ProgressDialog progressDialog;
-    public ImageView Photo;
-    Button sendPhoto, Submit;
-    EditText edit_name;
+    ImageView Photo;
+    Button sendPhoto;
+    PickResult r;
+
+
 
     @Nullable
     @Override
@@ -46,25 +45,12 @@ public class Profile_Fragment extends Fragment implements IPickResult {
 
         Photo = view.findViewById(R.id.profile_photo);
         sendPhoto = view.findViewById(R.id.Upload_Photo_btn);
-        edit_name = view.findViewById(R.id.edit_name);
-        Submit = view.findViewById(R.id.Submit_Button);
         firebaseStorage = FirebaseStorage.getInstance();
         reference = firebaseStorage.getReferenceFromUrl("gs://final-projects-2-73b2b.appspot.com/");
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Uploading..");
         progressDialog.setCancelable(false);
-
-
-        Submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String theText = edit_name.getText().toString();
-                Intent intent = new Intent(getActivity(),MainActivity.class);
-                intent.putExtra("Next Screen",theText);
-                startActivity(intent);
-            }
-        });
 
         Photo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +92,7 @@ public class Profile_Fragment extends Fragment implements IPickResult {
                 }
             }
         });
-
+       
         return view;
     }
 

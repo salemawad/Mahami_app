@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Final_projects</string>
-    <string name="welcome_to_task_management">Welcome To Task Management App</string>
+    <string name="app_name">Task Management</string>
+    <string name="welcome_to_task_management" translatable="false">Welcome To Task Management App</string>
     <string name="welcome_to_task_management2">Lest Go >>></string>
-    <string name="welcome_back">Welcome Back</string>
-    <string name="welcome_Splash2">Leave all your tasks to us</string>
-    <string name="welcome_2_Splash_2">We manage all your tasks properly </string>
+    <string name="welcome_back" translatable="false">Welcome Back</string>
+    <string name="welcome_Splash2" translatable="false">Leave all your tasks to us</string>
+    <string name="welcome_2_Splash_2" translatable="false">We manage all your tasks properly </string>
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
     <string name="Ques">What Would You do ?</string>
@@ -36,10 +36,15 @@
     <string name="sitting">Sitting</string>
     <string name="communicate">Communicate</string>
     <string name="about_us">About Us</string>
+
     <string name="share">Share</string>
     <string name="exit">Exit</string>
     <string name="log_out">Log Out</string>
+    <string name="setting_profile_text" > Account settings </string>
+    <string name="setting_app" > Application settings </string>
+
     <string name="upload_photo">Upload Your Photo</string>
+    <string name="discription_Us"  >Our application is to add your tasks to your appointment, and the application reminds you of the task to be completed at the time specified for it, a free application, easy handling</string>
 
 
 </resources>

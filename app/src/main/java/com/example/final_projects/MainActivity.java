@@ -76,19 +76,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_Language:
                 Showdialog();
-
-
-                Toast.makeText(this, "Language", Toast.LENGTH_SHORT).show();
-                break;
+                 break;
         }
         switch (item.getItemId()) {
             case R.id.nav_sitting:
-                Toast.makeText(this, "Sitting", Toast.LENGTH_SHORT).show();
+                Intent intent =new Intent(MainActivity.this,Sitteng.class);
+                startActivity(intent);
                 break;
         }
         switch (item.getItemId()) {
             case R.id.nav_about_us:
-                Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
+                Intent intent =new Intent(MainActivity.this,About_Us.class);
+                startActivity(intent);
                 break;
         }
         switch (item.getItemId()) {

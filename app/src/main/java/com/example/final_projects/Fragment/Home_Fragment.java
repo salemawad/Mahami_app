@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.final_projects.About_Us;
 import com.example.final_projects.Feedback_Ativity;
 import com.example.final_projects.List_Taksk;
 import com.example.final_projects.New_Task;
@@ -62,14 +63,13 @@ public class Home_Fragment extends Fragment {
             }
         });
 
-        final CardView sitting = view.findViewById(R.id.sitting);
-        sitting.setOnClickListener(new View.OnClickListener() {
+        final CardView about_us = view.findViewById(R.id.about_us);
+        about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sitting.setBackground(getResources().getDrawable(R.drawable.onclick));
-
-//                Intent intent=new Intent(getActivity(), Feedback_Ativity.class);
-//                startActivity(intent);
+                about_us.setBackground(getResources().getDrawable(R.drawable.onclick));
+                Intent intent=new Intent(getActivity(), About_Us.class);
+                startActivity(intent);
 
             }
         });

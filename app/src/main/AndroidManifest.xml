@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_projects">
-        <activity android:name=".List_Taksk"></activity>
+        <activity android:name=".Sitteng"></activity>
+        <activity android:name=".About_Us" />
+        <activity android:name=".List_Taksk" />
         <activity android:name=".New_Task" />
         <activity android:name=".Feedback_Ativity" />
         <activity android:name=".Splah_Dilog" />

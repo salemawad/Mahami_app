@@ -109,7 +109,7 @@
             android:rowCount="3">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/sitting"
+                android:id="@+id/about_us"
                 android:layout_width="75dp"
                 android:layout_height="100dp"
                 android:layout_rowWeight="1"

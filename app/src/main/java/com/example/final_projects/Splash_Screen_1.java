@@ -46,4 +46,9 @@ public class Splash_Screen_1 extends AppCompatActivity {
             }
         }, SPLASH_SCREEN);
     }
+
+    @Override
+    protected void onPause() {
+         super.onPause();
+    }
 }

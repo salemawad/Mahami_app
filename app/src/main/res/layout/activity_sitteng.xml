@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Sitteng">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/sitting"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+
+
+        />
+
+    <Button
+        android:id="@+id/btn_account_setting"
+        android:layout_width="366dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/shaep_b"
+        android:text="@string/setting_profile_text"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_setting_app"
+        android:layout_width="366dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shaep_b"
+        android:text="@string/setting_app"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_about"
+        android:layout_width="366dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shaep_b"
+        android:text="@string/about_us"
+        android:textColor="@color/white" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating"
+        android:layout_width="60dp"
+        android:layout_height="121dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#434175"
+        android:backgroundTint="#6C63FF"
+        android:src="@drawable/ic_baseline_share_24"
+        app:rippleColor="#434175" />
+
+
+</LinearLayout>
