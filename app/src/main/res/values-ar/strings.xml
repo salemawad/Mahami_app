@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">مدير المهام</string>
     <string name="welcome_to_task_management">مرحبًا بك في تطبيق إدارة المهام </string>
     <string name="welcome_to_task_management2">هيا بنا >>></string>
     <string name="welcome_back">مرحبًا بك مرة أخرى </string>
@@ -44,9 +43,5 @@
     <string name="upload_photo">رفع الصورة </string>
     <string name="setting_app" >إعدادات التطبيق </string>
     <string name="discription_Us"  >تطبيقنا هو إضافة مهامك إلى موعدك ، ويذكرك التطبيق بالمهمة المراد إنجازها في الوقت المحدد لها ، تطبيق مجاني ، سهل التعامل </string>
-
-
-
-
-
+    <string name="view_task_on_db" >اظهار المهام</string>
 </resources>

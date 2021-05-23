@@ -13,16 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
-        android:fontFamily="@font/amaranth_bold"
         android:gravity="center"
         android:text="@string/sitting"
         android:textColor="#434175"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/btn_account_setting"
-        android:layout_width="366dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/btn_setting_app"
-        android:layout_width="366dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
@@ -44,7 +44,7 @@
 
     <Button
         android:id="@+id/btn_about"
-        android:layout_width="366dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
