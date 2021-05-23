@@ -12,5 +12,6 @@ public class Alarm_Receiver extends BroadcastReceiver {
        NotificayionHelper notificayionHelper =new NotificayionHelper(context);
         NotificationCompat.Builder nb = notificayionHelper.getChannelNotification();
         notificayionHelper.getManager().notify(1, nb.build());
+
     }
 }

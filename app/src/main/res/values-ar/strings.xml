@@ -4,6 +4,7 @@
     <string name="navigation_drawer_open"> افتح درج التنقل</string>
     <string name="navigation_drawer_close"> أغلق درج التنقل</string>
     <string name="Ques">ماذا كنت ستفعل ؟</string>
+    <string name="Ques2">اضافة مهمة جديدة ?</string>
     <string name="new_task">مهمة جديدة</string>
     <string name="task_manger">مدير المهام</string>
     <string name="About_us">معلومات عنا</string>

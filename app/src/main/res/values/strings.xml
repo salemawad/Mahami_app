@@ -7,9 +7,10 @@
     <string name="welcome_2_Splash_2" translatable="false">We manage all your tasks properly </string>
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
-    <string name="Ques">What Would You do ?</string>
+    <string name="Ques">What Would You Do ?</string>
+    <string name="Ques2">Set A New Task ?</string>
     <string name="new_task">New Task</string>
-    <string name="task_manger">Task Manger</string>
+    <string name="task_manger">Task List</string>
     <string name="About_us">About Us</string>
     <string name="Feedback">Feedback</string>
     <string name="Bio">Bio</string>

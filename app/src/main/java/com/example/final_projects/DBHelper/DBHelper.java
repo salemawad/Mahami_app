@@ -25,12 +25,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //===========================================================================
     //Method For Insert data into SQLite Database Table (UserDetails)
-    public Boolean InsertUserData(String set_TaskName, String set_Description, String set_Date,  String set_Time) {
+    public Boolean InsertUserData(String set_TaskName, String set_Description,String set_Time) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("set_TaskName", set_TaskName);
         contentValues.put("set_Description", set_Description);
-        contentValues.put("set_Date", set_Date);
         contentValues.put("set_Time", set_Time);
         long result = DB.insert("User_Task", null, contentValues);
         if (result == -1) {

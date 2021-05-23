@@ -28,7 +28,7 @@
 
         <GridLayout
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="140dp"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:columnOrderPreserved="false"
@@ -41,8 +41,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="#6C63FF"
-                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#434175"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="6dp"
                 >
 
@@ -73,8 +73,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="#6C63FF"
-                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#434175"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -101,7 +101,7 @@
 
         <GridLayout
             android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:layout_height="140dp"
             android:layout_marginTop="50dp"
             android:alignmentMode="alignMargins"
             android:columnCount="2"
@@ -115,8 +115,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="#6C63FF"
-                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#434175"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -146,8 +146,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                app:cardBackgroundColor="#6C63FF"
-                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="#434175"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
