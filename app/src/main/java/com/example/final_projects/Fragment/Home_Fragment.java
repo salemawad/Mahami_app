@@ -29,22 +29,16 @@ public class Home_Fragment extends Fragment {
         new_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new_text.setBackground(getResources().getDrawable(R.drawable.onclick));
-
                 Intent intent = new Intent(getActivity(), New_Task.class);
                 startActivity(intent);
 
 
             }
         });
-
         final CardView feedback = view.findViewById(R.id.feedback);
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                feedback.setBackground(getResources().getDrawable(R.drawable.onclick));
-
-
                 Intent intent = new Intent(getActivity(), Feedback_Ativity.class);
                 startActivity(intent);
 
@@ -56,7 +50,6 @@ public class Home_Fragment extends Fragment {
         task_mange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                task_mange.setBackground(getResources().getDrawable(R.drawable.onclick));
                 Intent intent=new Intent(getActivity(), List_Taksk.class);
                 startActivity(intent);
 
@@ -67,7 +60,6 @@ public class Home_Fragment extends Fragment {
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                about_us.setBackground(getResources().getDrawable(R.drawable.onclick));
                 Intent intent=new Intent(getActivity(), About_Us.class);
                 startActivity(intent);
 

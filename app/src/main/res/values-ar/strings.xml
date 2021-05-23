@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Final_projects</string>
-     <string name="welcome_to_task_management2">هيا بنا >>></string>
+    <string name="app_name">مدير المهام</string>
+    <string name="welcome_to_task_management">مرحبًا بك في تطبيق إدارة المهام </string>
+    <string name="welcome_to_task_management2">هيا بنا >>></string>
+    <string name="welcome_back">مرحبًا بك مرة أخرى </string>
+    <string name="welcome_Splash2">اترك كل مهامك لنا</string>
+    <string name="welcome_2_Splash_2">نحن ندير جميع مهامك بشكل صحيح</string>
     <string name="navigation_drawer_open"> افتح درج التنقل</string>
     <string name="navigation_drawer_close"> أغلق درج التنقل</string>
     <string name="Ques">ماذا كنت ستفعل ؟</string>
@@ -39,6 +43,7 @@
     <string name="setting_profile_text"  > إعدادات الحساب </string>
     <string name="upload_photo">رفع الصورة </string>
     <string name="setting_app" >إعدادات التطبيق </string>
+    <string name="discription_Us"  >تطبيقنا هو إضافة مهامك إلى موعدك ، ويذكرك التطبيق بالمهمة المراد إنجازها في الوقت المحدد لها ، تطبيق مجاني ، سهل التعامل </string>
 
 
 

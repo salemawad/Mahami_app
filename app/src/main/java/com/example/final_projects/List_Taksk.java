@@ -1,6 +1,7 @@
 package com.example.final_projects;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -21,6 +22,8 @@ public class List_Taksk extends AppCompatActivity {
         setContentView(R.layout.activity_list__taksk);
         tabLayout = findViewById(R.id.tap_layout);
         viewPager = findViewById(R.id.view_pager);
+        // code  is to make the Activity full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Adapter home_pager_adapter = new Adapter(getSupportFragmentManager());
         home_pager_adapter.AddFragment(new List_New_Task(), "New Task");
