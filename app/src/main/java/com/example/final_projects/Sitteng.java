@@ -1,14 +1,14 @@
 package com.example.final_projects;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.final_projects.Fragment.Profile_Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Sitteng extends AppCompatActivity {
@@ -22,6 +22,9 @@ public class Sitteng extends AppCompatActivity {
         btn_about = findViewById(R.id.btn_about);
         btn_setting_app = findViewById(R.id.btn_setting_app);
         btn_account_setting = findViewById(R.id.btn_account_setting);
+        // code  is to make the Activity full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         btn_setting_app.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

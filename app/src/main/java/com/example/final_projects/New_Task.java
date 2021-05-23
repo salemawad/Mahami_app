@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -49,7 +50,8 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         EditText editName = findViewById(R.id.edit_name_new_task);
         EditText editDis = findViewById(R.id.edit_dis_new_task);
         View_Task = findViewById(R.id.View_task);
-
+        // code  is to make the Activity full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //===========================================================================
         //Listener For insert data into SQLite Database Table (UserDetails)
         submit.setOnClickListener(new View.OnClickListener() {

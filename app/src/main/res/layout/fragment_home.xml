@@ -10,10 +10,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/amaranth_bold"
         android:text="@string/Ques"
         android:textColor="#434175"
-        android:textSize="21sp" />
+        android:textSize="21sp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"/>
 
     <GridLayout
         android:id="@+id/grid_1"

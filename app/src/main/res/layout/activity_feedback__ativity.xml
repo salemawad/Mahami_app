@@ -3,40 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Feedback_Ativity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Feedback_Ativity">
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50sp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
         android:text="@string/add_a_comment"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:textColor="#434175"
         android:textSize="25sp"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:textStyle="bold" />
 
-
-        />
-
-    <EditText
-        android:id="@+id/edit_dis"
-        android:layout_width="332dp"
-        android:layout_height="215dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="103dp"
-        android:hint="@string/Discrip"
-        android:textColorHint="@color/white"
-        android:gravity="center"
-        android:background="@drawable/sheapedit"
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Any Problme With App "
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30sp"
+        android:textColor="#434175"
+        android:textSize="20sp"
         android:textStyle="bold"
-        />
+        android:checked="false" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="360dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColorHint="#AAAAAA"
+        android:text="Your Problem"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="100dp"
-        >
+        android:layout_marginTop="50sp"
+        android:orientation="horizontal">
 
         <com.hsalf.smileyrating.SmileyRating
             android:id="@+id/smile_rating"
@@ -45,15 +50,15 @@
 
 
     </LinearLayout>
+
     <Button
         android:id="@+id/button_send"
         android:layout_width="92dp"
         android:layout_height="49dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="@string/send_feed"
-        android:textColor="@color/white"
         android:background="@drawable/shaep_b"
-        />
+        android:text="@string/send_feed"
+        android:textColor="@color/white" />
 
 </LinearLayout>

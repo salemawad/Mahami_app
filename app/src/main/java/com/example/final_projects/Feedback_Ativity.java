@@ -1,6 +1,7 @@
 package com.example.final_projects;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,8 @@ public class Feedback_Ativity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback__ativity);
         smileyRating = findViewById(R.id.smile_rating);
+        // code  is to make the Activity full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         smileyRating.setSmileySelectedListener(new SmileyRating.OnSmileySelectedListener() {
             @Override
             public void onSmileySelected(SmileyRating.Type type) {
