@@ -1,100 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".New_Task">
 
-    <TextView
-        android:id="@+id/text_new_task"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:fontFamily="@font/amaranth_bold"
-        android:text="@string/Ques2"
-        android:textColor="#434175"
-        android:textSize="21sp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/edit_name_new_task"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/text_new_task"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:autofillHints="0"
-        android:background="@drawable/edite_text"
-        android:gravity="center_horizontal"
-        android:hint="@string/task_name"
-        android:inputType="textEmailAddress"
-        android:paddingTop="7dp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text_new_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/amaranth_bold"
+            android:text="@string/Ques2"
+            android:textColor="#434175"
+            android:textSize="21sp" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edit_dis_new_task"
-        android:layout_width="350dp"
-        android:layout_height="40sp"
-        android:layout_below="@id/edit_name_new_task"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/sheapedit"
-        android:layout_centerHorizontal="true"
+        <EditText
+            android:id="@+id/edit_name_new_task"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/text_new_task"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:autofillHints="0"
+            android:background="@drawable/edite_text"
+            android:gravity="center_horizontal"
+            android:hint="@string/task_name"
+            android:inputType="textEmailAddress"
+            android:paddingTop="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
 
-        android:hint="@string/description"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textStyle="bold" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_dis_new_task"
+            android:layout_width="350dp"
+            android:layout_height="40sp"
+            android:layout_below="@id/edit_name_new_task"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/sheapedit"
+
+            android:hint="@string/description"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold" />
 
 
-    <Button
-        android:id="@+id/time_picker_actions"
-        android:layout_width="250dp"
-        android:layout_height="40sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30sp"
-        android:layout_below="@id/edit_dis_new_task"
-        android:background="@drawable/shaep_b"
-        android:gravity="center_horizontal"
-        android:hint="@string/set_timer"
-        android:paddingTop="8dp"
-        android:layout_centerHorizontal="true"
+        <Button
+            android:id="@+id/time_picker_actions"
+            android:layout_width="250dp"
+            android:layout_height="40sp"
+            android:layout_below="@id/edit_dis_new_task"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
+            android:background="@drawable/shaep_b"
+            android:gravity="center_horizontal"
+            android:hint="@string/set_timer"
+            android:paddingTop="8dp"
 
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/Submit_Button_new_task"
-        android:layout_width="150dp"
-        android:layout_height="40sp"
-        android:layout_gravity="center"
-        android:layout_below="@id/time_picker_actions"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/shaep_b"
-        android:text="@string/submit"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginLeft="210dp"/>
 
-    <Button
-        android:id="@+id/View_task"
-        android:layout_width="150dp"
-        android:layout_height="40sp"
-        android:layout_marginTop="510dp"
-        android:background="@drawable/shaep_b"
-        android:text="View Task On DB"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginLeft="50sp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rel">
+
+        <Button
+            android:id="@+id/Submit_Button_new_task"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/shaep_b"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/View_task"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shaep_b"
+            android:text="@string/view_task_on_db"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            tools:ignore="ButtonStyle"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
 
     <!--    This is a new Activity-->
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
