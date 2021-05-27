@@ -61,7 +61,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 String taskDesText = editDis.getText().toString();
                 String task_time_text = time_btn.getText().toString();
 
-                Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText, task_time_text);
+                Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
                     Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
                 } else {
@@ -83,7 +83,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 while (res.moveToNext()) {
                     buffer.append("Task Name :").append(res.getString(0)).append("\n");
                     buffer.append("Description :").append(res.getString(1)).append("\n");
-                    buffer.append("Time Of Task :").append(res.getString(3)).append("\n");
+                 //   buffer.append("Time Of Task :").append(res.getString(3)).append("\n");
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(New_Task.this);
                 builder.setCancelable(true);
