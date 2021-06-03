@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_projects">
-        <activity android:name=".Sitteng"/>
+        <activity android:name=".login_detiles"/>
+        <activity android:name=".Sitteng" />
         <activity android:name=".About_Us" />
         <activity android:name=".List_Taksk" />
         <activity android:name=".New_Task" />
@@ -38,7 +39,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/picker_provider_paths" />
         </provider>
-        <receiver android:name=".Alarm.Alarm_Receiver"/>
+
+        <receiver android:name=".Alarm.Alarm_Receiver" />
     </application>
 
 </manifest>

@@ -1,12 +1,16 @@
 package com.example.final_projects;
 
 import android.os.Bundle;
+import android.os.ResultReceiver;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.storage.FirebaseStorage;
 import com.hsalf.smileyrating.SmileyRating;
+
+import javax.xml.transform.Result;
 
 public class Feedback_Ativity extends AppCompatActivity {
     private SmileyRating smileyRating;
@@ -41,11 +45,7 @@ public class Feedback_Ativity extends AppCompatActivity {
                     Toast.makeText(Feedback_Ativity.this, "جيد", Toast.LENGTH_SHORT).show();
 
                 }
-
                 int rating = type.getRating();
-
-
-
 
             }
         });

@@ -1,96 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profile_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/header_new_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="25sp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/Profile"
-        android:textColor="#434175"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/heder">
 
-    <ImageView
-        android:id="@+id/profile_photo"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="#D5D5D5"
-        />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90sp"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/white"
+            app:civ_border_overlay="true"
+            app:civ_border_width="1dp" />
+
+        <Button
+            android:id="@+id/Upload_Photo_btn"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="150sp"
+            android:background="@drawable/ic_baseline_cloud_upload_24"
+            android:paddingTop="13dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginStart="300dp" />
+
+    </RelativeLayout>
+
 
     <EditText
         android:id="@+id/edit_name"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="50sp"
         android:layout_gravity="center"
         android:layout_marginTop="50sp"
         android:autofillHints="0"
-        android:background="@drawable/edite_text"
         android:gravity="center_horizontal"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
         android:paddingTop="10dp"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="#AAAAAA"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edit_desc"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30sp"
         android:autofillHints="0"
-        android:background="@drawable/edite_text"
         android:gravity="center_horizontal"
         android:hint="@string/Bio"
         android:inputType="text"
         android:paddingTop="12sp"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="#AAAAAA"
         android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/Upload_Photo_btn"
-        android:layout_width="350dp"
-        android:layout_height="50sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30sp"
-        android:background="@drawable/login_btn_background"
-        android:gravity="center_horizontal"
-        android:hint="@string/upload_photo"
-        android:paddingTop="13dp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold" />
-
 
     <Button
         android:id="@+id/Submit_Button"
-        android:layout_width="160dp"
-        android:layout_height="50sp"
+        android:layout_width="100dp"
+        android:layout_height="40sp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:background="@drawable/login_btn_background"
         android:gravity="center_horizontal"
         android:hint="@string/Submit"
-        android:paddingTop="13sp"
+        android:paddingTop="10dp"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="17sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
 

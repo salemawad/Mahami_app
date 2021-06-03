@@ -40,11 +40,12 @@
     <string name="share">Share</string>
     <string name="exit">Exit</string>
     <string name="log_out">Log Out</string>
-    <string name="setting_profile_text" > Account settings </string>
-    <string name="setting_app" > Application settings </string>
+    <string name="setting_profile_text"> Account settings </string>
+    <string name="setting_app"> Application settings </string>
     <string name="upload_photo">Upload Your Photo</string>
-    <string name="discription_Us"  >Our application is to add your tasks to your appointment, and the application reminds you of the task to be completed at the time specified for it, a free application, easy handling</string>
-    <string name="view_task_on_db" >View Tasks</string>
+    <string name="discription_Us">Our application is to add your tasks to your appointment, and the application reminds you of the task to be completed at the time specified for it, a free application, easy handling</string>
+    <string name="view_task_on_db">View Tasks</string>
+    <string name="todo">TODO</string>
 
 
 </resources>
