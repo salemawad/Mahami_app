@@ -12,15 +12,11 @@ public class Tasks implements Parcelable {
     }
 
     public Tasks( String name, String describe) {
-
         this.name = name;
         this.describe= describe;
-
-
     }
+
     protected Tasks(Parcel in) {
-
-
         name = in.readString();
        describe= in.readString();
     }
@@ -50,7 +46,7 @@ public class Tasks implements Parcelable {
     }
 
     public void setDescribe(String describe) {
-        describe = describe;
+        this.describe = describe;
     }
 
     @Override

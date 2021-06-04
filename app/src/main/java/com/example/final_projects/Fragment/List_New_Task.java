@@ -24,6 +24,7 @@ public class List_New_Task extends Fragment {
      DBHelper DB;
     Task_adapter task_adapter;
 
+
     public List_New_Task(){
         //Empty Constructor
     }
@@ -31,20 +32,18 @@ public class List_New_Task extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=  inflater.inflate(R.layout.list_new_task,container,false);
-        final  RecyclerView  recyclerView= view.findViewById(R.id.rec);
+        View view = inflater.inflate(R.layout.list_new_task, container, false);
+        final RecyclerView recyclerView = view.findViewById(R.id.rec);
         DB = new DBHelper(getActivity());
-//        tasks.add(new Tasks("صحوة الساعة 7 صباحا","الذهاب للشغل"));
-//        tasks.add(new Tasks("الغدى","الغدى  "));
-//        tasks.add(new Tasks("حل الواجب"," واجبات الجامعة"));
+//        arrayList.add(new Tasks("صحوة الساعة 7 صباحا","الذهاب للشغل"));
+//        arrayList.add(new Tasks("الغدى","الغدى  "));
+//        arrayList.add(new Tasks("حل الواجب"," واجبات الجامعة"));
 
-      //  tasks= (ArrayList<Tasks>) DB.getData();
+        //  tasks= (ArrayList<Tasks>) DB.getData();
         ArrayList<Tasks>  arrayList = DB.getArray();
         task_adapter=new Task_adapter(arrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(task_adapter);
-
-
         return view;
     }
 }

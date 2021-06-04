@@ -61,14 +61,8 @@ public class DBHelper extends SQLiteOpenHelper {
             tasks1.setName(cursor.getString(0));
             tasks1.setDescribe(cursor.getString(1));
             tasks.add(tasks1);
-
-
-
-
         }
         cursor.close();
         return tasks;
-
-
     }
 }
