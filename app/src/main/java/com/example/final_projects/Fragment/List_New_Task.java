@@ -35,9 +35,6 @@ public class List_New_Task extends Fragment {
         View view = inflater.inflate(R.layout.list_new_task, container, false);
         final RecyclerView recyclerView = view.findViewById(R.id.rec);
         DB = new DBHelper(getActivity());
-//        arrayList.add(new Tasks("صحوة الساعة 7 صباحا","الذهاب للشغل"));
-//        arrayList.add(new Tasks("الغدى","الغدى  "));
-//        arrayList.add(new Tasks("حل الواجب"," واجبات الجامعة"));
 
         //  tasks= (ArrayList<Tasks>) DB.getData();
         ArrayList<Tasks>  arrayList = DB.getArray();

@@ -49,14 +49,13 @@
         android:layout_height="60dp"
         android:layout_below="@+id/edit_email"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40sp"
-        android:autofillHints="0"
+        android:layout_marginTop="40dp"
         android:hint="@string/password"
-        android:inputType="textPassword"
         android:background="@drawable/input_looks"
         android:elevation="10dp"
         android:ems="10"
         android:padding="16dp"
+        android:inputType="textEmailAddress"
         android:textStyle="bold"
         android:textColor="#6C63FF"
         android:textColorHint="#AAAAAA"/>
@@ -72,7 +71,8 @@
         android:background="@drawable/login_btn_background"
         android:text="@string/login"
         android:textColor="@color/white"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textSize="17sp"/>
 
     <Button
         android:id="@+id/Singup1"
@@ -85,8 +85,6 @@
         android:background="@drawable/login_btn_background"
         android:text="@string/singup"
         android:textColor="@color/white"
-        android:textStyle="bold" />
-
-
-
+        android:textStyle="bold"
+        android:textSize="17sp"/>
 </RelativeLayout>
