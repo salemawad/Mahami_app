@@ -26,8 +26,8 @@
     <string name="Discrip">What is your impression of the application</string>
     <string name="add_a_comment">Add Feedback</string>
     <string name="set_timer">Set Time</string>
-    <string name="email">email</string>
-    <string name="password">password</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="login">LogIn</string>
     <string name="singup">SingUp</string>
     <string name="forgetpssowrd">ForgetPssowrd ?</string>

@@ -7,95 +7,94 @@
     tools:context=".New_Task">
 
 
-        <TextView
-            android:id="@+id/text_new_task"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:text="@string/Ques2"
-            android:textColor="#434175"
-            android:textSize="21sp"
-            android:fontFamily="sans-serif-black"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/text_new_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/Ques2"
+        android:textColor="#434175"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edit_name_new_task"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/text_new_task"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:autofillHints="0"
-            android:background="@drawable/edite_text"
-            android:gravity="center_horizontal"
-            android:hint="@string/task_name"
-            android:inputType="textEmailAddress"
-            android:paddingTop="7dp"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textStyle="bold" />
+    <EditText
+        android:id="@+id/edit_name_new_task"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/text_new_task"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/input_looks"
+        android:elevation="10dp"
+        android:ems="10"
+        android:padding="16dp"
+        android:hint="@string/task_name"
+        android:inputType="text"
+        android:textColor="#6C63FF"
+        android:textColorHint="#AAAAAA"
+        android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_dis_new_task"
-            android:layout_width="300dp"
-            android:layout_height="40sp"
-            android:layout_below="@id/edit_name_new_task"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/sheapedit"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_dis_new_task"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/edit_name_new_task"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/input_looks"
+        android:hint="@string/description"
+        android:elevation="10dp"
+        android:ems="10"
+        android:padding="16dp"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#6C63FF"
+        android:textStyle="bold" />
 
-            android:hint="@string/description"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/time_picker_actions"
+        android:layout_width="200dp"
+        android:layout_height="40sp"
+        android:layout_below="@id/edit_dis_new_task"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:background="@drawable/shaep_b"
+        android:gravity="center_horizontal"
+        android:hint="@string/set_timer"
+        android:paddingTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/time_picker_actions"
-            android:layout_width="200dp"
-            android:layout_height="40sp"
-            android:layout_below="@id/edit_dis_new_task"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="30sp"
-            android:background="@drawable/shaep_b"
-            android:gravity="center_horizontal"
-            android:hint="@string/set_timer"
-            android:paddingTop="8dp"
+    <Button
+        android:id="@+id/Submit_Button_new_task"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/time_picker_actions"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50sp"
+        android:background="@drawable/shaep_b"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        tools:ignore="ButtonStyle" />
 
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/Submit_Button_new_task"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="50sp"
-            android:layout_below="@id/time_picker_actions"
-            android:background="@drawable/shaep_b"
-            android:text="@string/submit"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            tools:ignore="ButtonStyle"
-            android:layout_centerInParent="true"/>
-        <Button
-            android:id="@+id/View_task"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/Submit_Button_new_task"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shaep_b"
-            android:text="@string/view_task_on_db"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"/>
+    <Button
+        android:id="@+id/View_task"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/Submit_Button_new_task"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shaep_b"
+        android:text="@string/view_task_on_db"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>

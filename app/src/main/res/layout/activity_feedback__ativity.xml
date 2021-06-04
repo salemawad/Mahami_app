@@ -18,24 +18,20 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Any Problme With App "
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30sp"
-        android:textColor="#434175"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:checked="false" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="360dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/input_looks"
+        android:elevation="10dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:hint="Your Problem"
+        android:padding="16dp"
+        android:textColor="#434175"
         android:textColorHint="#AAAAAA"
-        android:text="Your Problem"/>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,8 +43,6 @@
             android:id="@+id/smile_rating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-
     </LinearLayout>
 
     <Button

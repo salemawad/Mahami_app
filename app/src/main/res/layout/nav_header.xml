@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="412dp"
     android:layout_height="176dp"
-    android:background="@drawable/heder"
+    android:background="@drawable/ic_bakcground"
     android:gravity="bottom"
     android:padding="8dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">

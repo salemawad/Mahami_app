@@ -29,38 +29,37 @@
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:autofillHints="0"
-        android:background="@drawable/edite_text"
-        android:gravity="center_horizontal"
         android:hint="@string/email"
+        android:background="@drawable/input_looks"
+        android:elevation="10dp"
+        android:ems="10"
+        android:padding="16dp"
         android:inputType="textEmailAddress"
-        android:paddingTop="7dp"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="#6C63FF"
+        android:textColorHint="#AAAAAA"/>
 
     <EditText
         android:id="@+id/edit_pass"
         android:layout_width="300dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/edit_email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40sp"
         android:autofillHints="0"
-        android:background="@drawable/edite_text"
-        android:gravity="center_horizontal"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:paddingTop="7dp"
-        android:textAlignment="center"
-        android:textColorHint="@color/white"
+        android:background="@drawable/input_looks"
+        android:elevation="10dp"
+        android:ems="10"
+        android:padding="16dp"
         android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="#6C63FF"
+        android:textColorHint="#AAAAAA"/>
 
     <Button
         android:id="@+id/Login"
@@ -73,7 +72,7 @@
         android:background="@drawable/login_btn_background"
         android:text="@string/login"
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/Singup1"
