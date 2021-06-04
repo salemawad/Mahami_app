@@ -1,6 +1,7 @@
 package com.example.final_projects;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -26,6 +27,22 @@ public class Splash_Screen_1 extends AppCompatActivity {
         textView1 = findViewById(R.id.Welcome_text);
         textView2 = findViewById(R.id.Welcome_text2);
 
+        // ==================================================================================================================
+        //This Code To Show The Activity Once When App Open For First Time
+        SharedPreferences preferences = getSharedPreferences("PREFERENCES", MODE_PRIVATE);
+        String FirstTimeInstall = preferences.getString("FirstTimeInstall","");
+
+        //If App is was Opened For First Time Do It .....
+        if (FirstTimeInstall.equals("Yes")){
+            Intent intent = new Intent(Splash_Screen_1.this,Splash_Screen_2.class);
+            startActivity(intent);
+        }else {
+            //Is Not Else ...... <_<
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("FirstTimeInstall", "Yes");
+            editor.apply();
+        }
+        // ==================================================================================================================
         //Animation For the objects
         animation = AnimationUtils.loadAnimation(this, R.anim.anim);
 
@@ -33,10 +50,10 @@ public class Splash_Screen_1 extends AppCompatActivity {
         animationView.setAnimation(animation);
         textView1.setAnimation(animation);
         textView2.setAnimation(animation);
-
+        // ==================================================================================================================
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        // ==================================================================================================================
         //this code for the splash screen what to do after finish it
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -46,7 +63,7 @@ public class Splash_Screen_1 extends AppCompatActivity {
             }
         }, SPLASH_SCREEN);
     }
-
+    // ==================================================================================================================
     @Override
     protected void onPause() {
          super.onPause();

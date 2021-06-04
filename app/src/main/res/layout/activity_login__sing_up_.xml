@@ -22,17 +22,17 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="TODO"
         android:src="@drawable/bakc2" />
 
     <EditText
         android:id="@+id/edit_email"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30sp"
         android:hint="@string/email"
         android:background="@drawable/input_looks"
         android:elevation="10dp"
@@ -46,16 +46,16 @@
     <EditText
         android:id="@+id/edit_pass"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/edit_email"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30sp"
         android:hint="@string/password"
         android:background="@drawable/input_looks"
         android:elevation="10dp"
         android:ems="10"
         android:padding="16dp"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:textStyle="bold"
         android:textColor="#6C63FF"
         android:textColorHint="#AAAAAA"/>
@@ -67,12 +67,12 @@
         android:layout_below="@id/edit_pass"
         android:layout_marginStart="200dp"
         android:layout_marginLeft="220dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/login_btn_background"
         android:text="@string/login"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:textSize="15sp"/>
 
     <Button
         android:id="@+id/Singup1"
@@ -81,10 +81,10 @@
         android:layout_below="@id/edit_pass"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/login_btn_background"
         android:text="@string/singup"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:textSize="15sp"/>
 </RelativeLayout>
