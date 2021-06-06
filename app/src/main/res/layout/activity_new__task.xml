@@ -22,35 +22,33 @@
     <EditText
         android:id="@+id/edit_name_new_task"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/text_new_task"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:background="@drawable/input_looks"
-        android:elevation="10dp"
+        android:elevation="5dp"
         android:ems="10"
         android:padding="16dp"
         android:hint="@string/task_name"
         android:inputType="text"
         android:textColor="#6C63FF"
-        android:textColorHint="#AAAAAA"
-        android:textStyle="bold" />
+        android:textColorHint="#AAAAAA" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_dis_new_task"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/edit_name_new_task"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:background="@drawable/input_looks"
         android:hint="@string/description"
-        android:elevation="10dp"
+        android:elevation="5dp"
         android:ems="10"
         android:padding="16dp"
         android:textColorHint="#AAAAAA"
-        android:textColor="#6C63FF"
-        android:textStyle="bold" />
+        android:textColor="#6C63FF" />
 
 
     <Button

@@ -35,11 +35,10 @@
         android:layout_marginTop="30sp"
         android:hint="@string/email"
         android:background="@drawable/input_looks"
-        android:elevation="10dp"
+        android:elevation="5dp"
         android:ems="10"
         android:padding="16dp"
         android:inputType="textEmailAddress"
-        android:textStyle="bold"
         android:textColor="#6C63FF"
         android:textColorHint="#AAAAAA"/>
 
@@ -52,11 +51,10 @@
         android:layout_marginTop="30sp"
         android:hint="@string/password"
         android:background="@drawable/input_looks"
-        android:elevation="10dp"
+        android:elevation="5dp"
         android:ems="10"
         android:padding="16dp"
-        android:inputType="textPassword"
-        android:textStyle="bold"
+        android:inputType="textEmailAddress"
         android:textColor="#6C63FF"
         android:textColorHint="#AAAAAA"/>
 
