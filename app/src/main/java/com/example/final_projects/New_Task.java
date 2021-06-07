@@ -1,54 +1,54 @@
 package com.example.final_projects;
 
-import android.app.AlarmManager;
-import android.app.DatePickerDialog;
 import android.app.PendingIntent;
-import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-
-import com.example.final_projects.Alarm.Alarm_Receiver;
-import com.example.final_projects.Alarm.TimePickerFragment;
 import com.example.final_projects.DBHelper.DBHelper;
-
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import androidx.appcompat.app.AppCompatActivity;
+import com.allyants.notifyme.NotifyMe;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import java.util.Calendar;
 
-public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
+import static com.vansuita.pickimage.dialog.PickImageDialog.build;
+
+public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener,DatePickerDialog.OnDateSetListener {
 
     private Button time_btn;
-    private static final String TAG = "New_Task";
-    private DatePickerDialog.OnDateSetListener OnDateSetListener;
-    int t2Hour, t2Minute, year, month, day;
     public Button submit, View_Task;
     DBHelper DB;
-    public EditText editDis ,editName;
+    public EditText editName, editDis;
+    Calendar now = Calendar.getInstance();
+    TimePickerDialog tpd;
+    DatePickerDialog dpd;
+
+
+    //=================================================================================
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new__task);
         DB = new DBHelper(this);
-
         time_btn = findViewById(R.id.time_picker_actions);
         submit = findViewById(R.id.Submit_Button_new_task);
-        EditText editName = findViewById(R.id.edit_name_new_task);
-        EditText editDis = findViewById(R.id.edit_dis_new_task);
+        editName = findViewById(R.id.edit_name_new_task);
+        editDis = findViewById(R.id.edit_dis_new_task);
         View_Task = findViewById(R.id.View_task);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -83,7 +83,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 while (res.moveToNext()) {
                     buffer.append("Task Name :").append(res.getString(0)).append("\n");
                     buffer.append("Description :").append(res.getString(1)).append("\n");
-                 //   buffer.append("Time Of Task :").append(res.getString(3)).append("\n");
+                    //   buffer.append("Time Of Task :").append(res.getString(3)).append("\n");
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(New_Task.this);
                 builder.setCancelable(true);
@@ -92,48 +92,90 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 builder.show();
             }
         });
+        //==============================================================================
+        //get Current date and set it to DataPicker
+        Calendar now = Calendar.getInstance();
+        dpd = DatePickerDialog.newInstance(
+                New_Task.this,
+                now.get(Calendar.YEAR), // Initial year selection
+                now.get(Calendar.MONTH), // Initial month selection
+                now.get(Calendar.DAY_OF_MONTH)// Inital day selection
+        );
 
-        //=================================================================================
+        //get Current Time and set it to DataPicker
+        tpd = TimePickerDialog.newInstance(
+                New_Task.this,
+                now.get(Calendar.HOUR_OF_DAY), // Initial Hour selection
+                now.get(Calendar.MINUTE),// Initial Minute selection
+                false
+        );
+
         time_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(), "time picker");
+                dpd.show(getSupportFragmentManager(), "Datepickerdialog");
             }
         });
-    }
 
-    //=================================================================================
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    }
+        //=================================================================================
+//        time_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DialogFragment timePicker = new TimePickerFragment();
+//                timePicker.show(getSupportFragmentManager(), "time picker");
+//            }
+//        });
+//    }
+
+        //=================================================================================
+//    @RequiresApi(api = Build.VERSION_CODES.O)
+//    @Override
+//    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+//        Calendar c = Calendar.getInstance();
+//        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+//        c.set(Calendar.MINUTE, minute);
+//        c.set(Calendar.SECOND, 0);
+//        startAlarm(c);
+//    }
+
+        //=================================================================================
+//    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+//    private void startAlarm(Calendar c) {
+//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//        Intent intent = new Intent(this, Alarm_Receiver.class);
+//        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+//        if (c.before(Calendar.getInstance())) {
+//            c.add(Calendar.DATE, 1);
+//        }
+//
+//        // Initialize Our Alarm
+//        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+//    }
+        //=================================================================================
+
     @Override
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY,hourOfDay);
-        c.set(Calendar.MINUTE,minute);
-        c.set(Calendar.SECOND,0);
-        startAlarm(c);
-    }
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private void startAlarm(Calendar c){
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, Alarm_Receiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1,intent,0);
-        if(c.before(Calendar.getInstance())){
-            c.add(Calendar.DATE,1);
-        }
-
-        // Initialize Our Alarm
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        now.set(Calendar.YEAR, year);
+        now.set(Calendar.MONTH, monthOfYear);
+        now.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        tpd.show(getSupportFragmentManager(), "Timepickerdialog");
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR,year);
-        c.set(Calendar.MONTH,month);
-        c.set(Calendar.DAY_OF_MONTH,0);
-        startAlarm(c);
+    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
+        now.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        now.set(Calendar.MINUTE, minute);
+
+        Intent onclickactivity = new Intent(this, List_Taksk.class);
+        PendingIntent content = PendingIntent.getActivity(this,0,onclickactivity,0);
+
+        NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
+                .title(editName.getText().toString())
+                .content(editDis.getText().toString())
+                .time(now)
+                .large_icon(R.drawable.smartphone)
+                .small_icon(R.drawable.notfication)
+                .build();
     }
 }
-
