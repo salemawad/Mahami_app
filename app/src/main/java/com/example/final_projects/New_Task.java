@@ -4,10 +4,15 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -46,6 +51,20 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         View_Task = findViewById(R.id.View_task);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // inflater the  custm_toast
+        LayoutInflater inflater= getLayoutInflater();
+        View view=inflater.inflate(R.layout.custm_toast,(ViewGroup)findViewById(R.id.con_toast));
+        TextView textView15=view.findViewById(R.id.textView15);
+        textView15.setText("Successful entry");
+        ImageView imageView2=view.findViewById(R.id.imageView2);
+        imageView2.setImageResource(R.drawable.check);
+
+        // Create Toast
+        final  Toast toast =new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_HORIZONTAL,25,500);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(view);
         //===========================================================================
         //Listener For insert data into SQLite Database Table (UserDetails)
         submit.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +76,8 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
 
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
-                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
+                    toast.show();
+                    //Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
                 }
