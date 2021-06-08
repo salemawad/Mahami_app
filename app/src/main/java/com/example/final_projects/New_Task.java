@@ -1,6 +1,5 @@
 package com.example.final_projects;
 
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -26,7 +25,7 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
-public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener,DatePickerDialog.OnDateSetListener {
+public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
     private Button time_btn;
     public Button submit, View_Task;
@@ -35,7 +34,6 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
     Calendar now = Calendar.getInstance();
     TimePickerDialog tpd;
     DatePickerDialog dpd;
-
 
     //=================================================================================
 
@@ -51,18 +49,17 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         View_Task = findViewById(R.id.View_task);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        //===========================================================================
         // inflater the  custm_toast
-        LayoutInflater inflater= getLayoutInflater();
-        View view=inflater.inflate(R.layout.custm_toast,(ViewGroup)findViewById(R.id.con_toast));
-        TextView textView15=view.findViewById(R.id.textView15);
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.custm_toast, (ViewGroup) findViewById(R.id.con_toast));
+        TextView textView15 = view.findViewById(R.id.textView15);
         textView15.setText("Successful entry");
-        ImageView imageView2=view.findViewById(R.id.imageView2);
+        ImageView imageView2 = view.findViewById(R.id.imageView2);
         imageView2.setImageResource(R.drawable.check);
-
         // Create Toast
-        final  Toast toast =new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_HORIZONTAL,25,500);
+        final Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_HORIZONTAL, 25, 500);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(view);
         //===========================================================================
@@ -76,12 +73,18 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
 
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
-                    toast.show();
-                    //Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
+//                    toast.show();
+                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(New_Task.this,List_Taksk.class);
+                    startActivity(intent);
+                }if (CheckInsertData == false){
+                    Toast.makeText(New_Task.this, "Name Of Task OR Dis is missing", Toast.LENGTH_SHORT).show();
+                }if (taskNameText == null) {
+                    Toast.makeText(New_Task.this, "Name Of Task is missing", Toast.LENGTH_SHORT).show();
+                }else if (taskDesText == null){
+                    Toast.makeText(New_Task.this, "Dis is missing", Toast.LENGTH_SHORT).show();
                 }
-            }
+                }
         });
         //===========================================================================
         //Listener For View data into SQLite Database Table (UserDetails)
@@ -115,7 +118,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 now.get(Calendar.MONTH), // Initial month selection
                 now.get(Calendar.DAY_OF_MONTH)// Inital day selection
         );
-
+        //==============================================================================
         //get Current Time and set it to DataPicker
         tpd = TimePickerDialog.newInstance(
                 New_Task.this,
@@ -123,7 +126,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 now.get(Calendar.MINUTE),// Initial Minute selection
                 false
         );
-
+        //==============================================================================
         time_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +135,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         });
 
     }
-
+    //==============================================================================
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         now.set(Calendar.YEAR, year);
@@ -140,26 +143,24 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         now.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         tpd.show(getSupportFragmentManager(), "Timepickerdialog");
     }
-
+    //==============================================================================
     @Override
     public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
         now.set(Calendar.HOUR_OF_DAY, hourOfDay);
         now.set(Calendar.MINUTE, minute);
-
-        Intent onclickactivity = new Intent(this, List_Taksk.class);
-        PendingIntent content = PendingIntent.getActivity(this,0,onclickactivity,0);
 
         NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
                 .title(editName.getText().toString())
                 .content(editDis.getText().toString())
                 .time(now)
                 .key("test")
-                .color(110,117,219,0)
+                .color(110, 117, 219, 0)
                 .large_icon(R.drawable.smartphone)
                 .small_icon(R.drawable.notfication)
-                .addAction(new Intent(),"View Task")
-                .addAction(new Intent(),"Deism")
-                .addAction(new Intent(),"Late 10 Second")
+                .addAction(new Intent(), "View Task")
+                .addAction(new Intent(), "Deism")
+                .addAction(new Intent(), "Late 10 Second")
                 .build();
     }
+    //==============================================================================
 }
