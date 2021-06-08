@@ -65,7 +65,7 @@ public class Feedback_Ativity extends AppCompatActivity {
 
         // Create Toast
         final  Toast toast =new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_HORIZONTAL,50,500);
+        toast.setGravity(Gravity.CENTER_HORIZONTAL,25,500);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(view);
         button_send.setOnClickListener(new View.OnClickListener() {

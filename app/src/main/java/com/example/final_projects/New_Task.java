@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import com.allyants.notifyme.NotifyMe;
+import com.example.final_projects.Fragment.List_New_Task;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import java.util.Calendar;
@@ -63,10 +65,12 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
 
         TextView textView15= view.findViewById(R.id.textView15);
         textView15.setText("Successful entry");
+        ImageView imageView2=view.findViewById(R.id.imageView2);
+        imageView2.setImageResource(R.drawable.check);
 
         // Create Toast
         final  Toast toast =new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_HORIZONTAL,50,500);
+        toast.setGravity(Gravity.CENTER_HORIZONTAL,30,500);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(view);
         //===========================================================================
@@ -83,11 +87,12 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
                     toast.show();
-
                  //   Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
                 }
+                Intent intent = new Intent(New_Task.this,List_Taksk.class);
+                startActivity(intent);
             }
         });
         //===========================================================================
