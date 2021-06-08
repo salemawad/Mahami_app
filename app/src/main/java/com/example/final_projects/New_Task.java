@@ -3,36 +3,23 @@ package com.example.final_projects;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.final_projects.DBHelper.DBHelper;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.allyants.notifyme.NotifyMe;
-import com.example.final_projects.Fragment.List_New_Task;
+import com.example.final_projects.DBHelper.DBHelper;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
-import java.util.Calendar;
 
-import static com.vansuita.pickimage.dialog.PickImageDialog.build;
+import java.util.Calendar;
 
 public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener,DatePickerDialog.OnDateSetListener {
 
@@ -59,20 +46,6 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         View_Task = findViewById(R.id.View_task);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        // inflate design custm toast
-        LayoutInflater inflater= getLayoutInflater();
-        View view=inflater.inflate(R.layout.custm_toast,(ViewGroup)findViewById(R.id.con_toast));
-
-        TextView textView15= view.findViewById(R.id.textView15);
-        textView15.setText("Successful entry");
-        ImageView imageView2=view.findViewById(R.id.imageView2);
-        imageView2.setImageResource(R.drawable.check);
-
-        // Create Toast
-        final  Toast toast =new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_HORIZONTAL,30,500);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(view);
         //===========================================================================
         //Listener For insert data into SQLite Database Table (UserDetails)
         submit.setOnClickListener(new View.OnClickListener() {
@@ -81,18 +54,13 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 String taskNameText = editName.getText().toString();
                 String taskDesText = editDis.getText().toString();
                 String task_time_text = time_btn.getText().toString();
-                editName.setText("");
-                editDis.setText("");
 
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
-                    toast.show();
-                 //   Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(New_Task.this,List_Taksk.class);
-                startActivity(intent);
             }
         });
         //===========================================================================
@@ -144,41 +112,6 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         });
 
     }
-        //=================================================================================
-//        time_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                DialogFragment timePicker = new TimePickerFragment();
-//                timePicker.show(getSupportFragmentManager(), "time picker");
-//            }
-//        });
-//    }
-
-        //=================================================================================
-//    @RequiresApi(api = Build.VERSION_CODES.O)
-//    @Override
-//    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-//        Calendar c = Calendar.getInstance();
-//        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
-//        c.set(Calendar.MINUTE, minute);
-//        c.set(Calendar.SECOND, 0);
-//        startAlarm(c);
-//    }
-
-        //=================================================================================
-//    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-//    private void startAlarm(Calendar c) {
-//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-//        Intent intent = new Intent(this, Alarm_Receiver.class);
-//        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
-//        if (c.before(Calendar.getInstance())) {
-//            c.add(Calendar.DATE, 1);
-//        }
-//
-//        // Initialize Our Alarm
-//        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-//    }
-        //=================================================================================
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
@@ -200,8 +133,13 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 .title(editName.getText().toString())
                 .content(editDis.getText().toString())
                 .time(now)
+                .key("test")
+                .color(110,117,219,0)
                 .large_icon(R.drawable.smartphone)
                 .small_icon(R.drawable.notfication)
+                .addAction(new Intent(),"View Task")
+                .addAction(new Intent(),"Deism")
+                .addAction(new Intent(),"Late 10 Second")
                 .build();
     }
 }
