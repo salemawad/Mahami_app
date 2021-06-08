@@ -68,4 +68,6 @@ public class Splash_Screen_1 extends AppCompatActivity {
     protected void onPause() {
          super.onPause();
     }
+
+
 }
