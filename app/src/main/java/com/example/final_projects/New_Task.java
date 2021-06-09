@@ -73,15 +73,15 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
 
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
-//                    toast.show();
-                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
+                    toast.show();
+//                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(New_Task.this,List_Taksk.class);
                     startActivity(intent);
                 }if (CheckInsertData == false){
-                    Toast.makeText(New_Task.this, "Name Of Task OR Dis is missing", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(New_Task.this, "This Task is already Add", Toast.LENGTH_SHORT).show();
                 }if (taskNameText == null) {
                     Toast.makeText(New_Task.this, "Name Of Task is missing", Toast.LENGTH_SHORT).show();
-                }else if (taskDesText == null){
+                }if (taskDesText == null){
                     Toast.makeText(New_Task.this, "Dis is missing", Toast.LENGTH_SHORT).show();
                 }
                 }
