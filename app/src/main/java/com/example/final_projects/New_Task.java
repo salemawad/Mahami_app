@@ -75,16 +75,19 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 if (CheckInsertData == true) {
                     toast.show();
 //                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(New_Task.this,List_Taksk.class);
+                    Intent intent = new Intent(New_Task.this, List_Taksk.class);
                     startActivity(intent);
-                }if (CheckInsertData == false){
-                    Toast.makeText(New_Task.this, "This Task is already Add", Toast.LENGTH_SHORT).show();
-                }if (taskNameText == null) {
-                    Toast.makeText(New_Task.this, "Name Of Task is missing", Toast.LENGTH_SHORT).show();
-                }if (taskDesText == null){
-                    Toast.makeText(New_Task.this, "Dis is missing", Toast.LENGTH_SHORT).show();
                 }
+                if (CheckInsertData != null) {
+                    Toast.makeText(New_Task.this, "Add Data First", Toast.LENGTH_SHORT).show();
                 }
+//                if (taskNameText != null) {
+//                    Toast.makeText(New_Task.this, "Name Of Task is missing", Toast.LENGTH_SHORT).show();
+//                }
+//                if (taskDesText != null) {
+//                    Toast.makeText(New_Task.this, "Dis is missing", Toast.LENGTH_SHORT).show();
+//                }
+            }
         });
         //===========================================================================
         //Listener For View data into SQLite Database Table (UserDetails)
@@ -135,6 +138,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         });
 
     }
+
     //==============================================================================
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
@@ -143,6 +147,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         now.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         tpd.show(getSupportFragmentManager(), "Timepickerdialog");
     }
+
     //==============================================================================
     @Override
     public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {

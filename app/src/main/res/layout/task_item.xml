@@ -10,7 +10,8 @@
         android:layout_height="140dp"
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/list_task_bakc">
+        android:background="@drawable/list_task_bakc"
+        android:elevation="8dp">
 
         <TextView
             android:id="@+id/txt"
@@ -23,7 +24,10 @@
             app:layout_constraintTop_toTopOf="parent"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="#AFAFAF"
+            android:ems="10"
+            android:fontFamily="sans-serif-black"
+            android:elevation="8dp"/>
 
         <TextView
             android:id="@+id/txtD"
@@ -35,21 +39,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt"
-            android:textColor="@color/white"/>
+            android:fontFamily="sans-serif-black"
+            android:textColor="#AFAFAF"/>
 
         <TextView
             android:id="@+id/txtTime"
             android:layout_width="0dp"
             android:layout_height="30sp"
+            android:fontFamily="@font/vidaloka"
             android:minHeight="48dp"
+            android:paddingLeft="230dp"
+            android:paddingTop="15sp"
+            android:text="Now"
+            android:textColor="#AFAFAF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtD"
-            android:textColor="@color/white"
-            android:paddingLeft="230dp"
-            android:paddingTop="15sp"
-            android:text="Now"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtD" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
