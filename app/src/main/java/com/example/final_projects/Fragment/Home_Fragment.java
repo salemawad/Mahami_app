@@ -32,7 +32,6 @@ public class Home_Fragment extends Fragment {
                 Intent intent = new Intent(getActivity(), New_Task.class);
                 startActivity(intent);
 
-
             }
         });
         final CardView feedback = view.findViewById(R.id.feedback);

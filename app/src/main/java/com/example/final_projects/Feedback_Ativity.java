@@ -1,11 +1,6 @@
 package com.example.final_projects;
 
 import android.os.Bundle;
-import android.os.ResultReceiver;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,10 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.storage.FirebaseStorage;
 import com.hsalf.smileyrating.SmileyRating;
-
-import javax.xml.transform.Result;
 
 public class Feedback_Ativity extends AppCompatActivity {
     private SmileyRating smileyRating;
@@ -59,21 +51,6 @@ public class Feedback_Ativity extends AppCompatActivity {
 
             }
         });
-
-        LayoutInflater inflater= getLayoutInflater();
-        View view=inflater.inflate(R.layout.custm_toast,(ViewGroup)findViewById(R.id.con_toast));
-
-        // Create Toast
-        final  Toast toast =new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_HORIZONTAL,25,500);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(view);
-        button_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                input.setText("");
-                toast.show();
             }
-        });
+
     }
-}

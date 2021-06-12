@@ -24,10 +24,10 @@
         android:layout_below="@id/animate1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="@font/cairo"
         android:text="@string/welcome_to_task_management"
         android:textSize="23sp"
-        android:textColor="#0C0E15"/>
+        android:textColor="#0C0E15" />
 
     <TextView
         android:id="@+id/Welcome_text2"
@@ -36,9 +36,10 @@
         android:layout_below="@id/Welcome_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25sp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="@font/cairo"
         android:text="@string/welcome_to_task_management2"
-        android:textSize="20sp"/>
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animate2"
@@ -55,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_below="@id/animate2"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="149dp"
         app:lottie_autoPlay="true"
         app:lottie_colorFilter="#F6B531"
         app:lottie_loop="true"

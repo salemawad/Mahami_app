@@ -7,8 +7,7 @@
     <RelativeLayout
         android:id="@+id/layout_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_bakcground">
+        android:layout_height="wrap_content">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -18,7 +17,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:src="@drawable/profile"
-            app:civ_border_color="@color/white"
+            app:civ_border_color="@color/black"
             app:civ_border_overlay="true"
             app:civ_border_width="1dp" />
         <TextView
@@ -29,9 +28,10 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="@string/user_name"
+            android:fontFamily="@font/cairo"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/user_bio"
@@ -41,18 +41,19 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="@string/Bio"
+            android:fontFamily="@font/cairo"
+            android:textSize="17sp"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
     </RelativeLayout>
 
     <GridLayout
         android:id="@+id/grid_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="200dp"
         android:orientation="vertical">
 
 
@@ -87,11 +88,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal"
                         android:text="@string/new_task"
                         android:textColor="#FFFFFF"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/cairo"
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -118,11 +120,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal"
                         android:text="@string/task_manger"
                         android:textColor="#FFFFFF"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/cairo"
+                        android:textSize="17sp"
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -160,11 +163,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal"
                         android:text="@string/About_us"
                         android:textColor="#FFFFFF"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/cairo"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -190,11 +194,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:fontFamily="sans-serif-black"
                         android:gravity="center_horizontal"
                         android:text="@string/Feedback"
                         android:textColor="#FFFFFF"
-                        android:textSize="18sp" />
+                        android:fontFamily="@font/cairo"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>

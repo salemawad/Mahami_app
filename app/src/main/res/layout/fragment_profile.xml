@@ -8,9 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/ic_bakcground">
-
+        android:layout_height="200dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_photo"
@@ -19,9 +17,10 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="90sp"
             android:src="@drawable/profile"
-            app:civ_border_color="@color/white"
+            app:civ_border_color="#818181"
             app:civ_border_overlay="true"
-            app:civ_border_width="1dp" />
+            app:civ_border_width="1dp"
+            />
 
         <Button
             android:id="@+id/Upload_Photo_btn"
@@ -30,7 +29,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="250dp"
             android:layout_marginTop="150dp"
-            android:background="@drawable/ic_baseline_cloud_upload_24"
+            android:background="@drawable/uploade_color_2"
             android:paddingTop="13dp"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -53,6 +52,7 @@
         android:ems="10"
         android:padding="16dp"
         android:textColor="@color/black"
+        android:fontFamily="@font/cairo"
         android:textColorHint="#AAAAAA"
         android:textStyle="bold" />
 
@@ -70,7 +70,9 @@
         android:padding="16dp"
         android:textColor="@color/black"
         android:textColorHint="#AAAAAA"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/cairo"
+        />
 
     <Button
         android:id="@+id/Submit_Button"
@@ -85,6 +87,9 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/cairo"
+
+        />
 
 </LinearLayout>

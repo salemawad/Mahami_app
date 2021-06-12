@@ -19,7 +19,6 @@
             android:id="@+id/nav_sitting"
             android:icon="@drawable/ic_settings"
             android:title="@string/sitting" />
-
     </group>
     <item android:title="@string/communicate">
         <menu>
@@ -38,7 +37,7 @@
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_log_out"
-                android:title="@string/log_out"/>
+                android:title="@string/log_out" />
         </menu>
     </item>
 </menu>

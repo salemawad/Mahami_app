@@ -17,7 +17,7 @@
         android:text="@string/sitting"
         android:textColor="#434175"
         android:textSize="25sp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/cairo"
         android:textStyle="bold"/>
 
     <Button
@@ -27,6 +27,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:background="@drawable/shaep_b"
+        android:fontFamily="@font/cairo"
         android:text="@string/setting_profile_text"
         android:textColor="@color/white"
         android:textStyle="bold"/>
@@ -39,6 +40,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/shaep_b"
         android:text="@string/setting_app"
+        android:fontFamily="@font/cairo"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
@@ -51,6 +53,7 @@
         android:background="@drawable/shaep_b"
         android:text="@string/about_us"
         android:textColor="@color/white"
+        android:fontFamily="@font/cairo"
         android:textStyle="bold"/>
 
 

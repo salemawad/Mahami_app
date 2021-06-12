@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.final_projects.Fragment.About_Us_Fragment;
 import com.example.final_projects.Fragment.Home_Fragment;
 import com.example.final_projects.Fragment.Profile_Fragment;
 import com.google.android.material.navigation.NavigationView;
@@ -27,9 +28,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private DrawerLayout drawer;
+    public DrawerLayout drawer;
     FirebaseAuth mAtu;
-    TextView name_header;
+    public TextView name_header;
+    public Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         mAtu = FirebaseAuth.getInstance();
         //============================================Nav_Casting===========================================
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new Home_Fragment()).commit();
@@ -79,18 +83,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_Language:
                 Showdialog();
-                 break;
+                break;
         }
         switch (item.getItemId()) {
             case R.id.nav_sitting:
-                Intent intent =new Intent(MainActivity.this,Sitteng.class);
+                Intent intent = new Intent(MainActivity.this, Sitteng.class);
                 startActivity(intent);
                 break;
         }
         switch (item.getItemId()) {
             case R.id.nav_about_us:
-                Intent intent =new Intent(MainActivity.this,About_Us.class);
-                startActivity(intent);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new About_Us_Fragment()).commit();
                 break;
         }
         switch (item.getItemId()) {
@@ -102,13 +106,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
                 break;
         }
-        switch (item.getItemId()) {
-            case R.id.nav_about_us:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Home_Fragment()).commit();
-                break;
-        }
-
         if (item.getItemId() == R.id.nav_logout) {
 
             Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();

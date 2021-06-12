@@ -3,30 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.final_projects">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Final_projects">
-        <activity android:name=".login_detiles"/>
+
+
+        <activity android:name=".login_detiles" />
         <activity android:name=".Sitteng" />
         <activity android:name=".About_Us" />
         <activity android:name=".List_Taksk" />
         <activity android:name=".New_Task" />
         <activity android:name=".Feedback_Ativity" />
         <activity android:name=".Splah_Dilog" />
-        <activity android:name=".Login_Sing_up_Activity" />
         <activity android:name=".Splash_Screen_2" />
-        <activity android:name=".Splash_Screen_1" />
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.Final_projects.NoActionBar" >
+        <activity android:name=".Login_Sing_up_Activity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Splash_Screen_1"
+            android:theme="@style/Theme.Final_projects.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name="com.allyants.notifyme.NotificationPublisher" />
+        <receiver android:name="com.allyants.notifyme.BootNotifyMe">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -38,9 +50,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/picker_provider_paths" />
         </provider>
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

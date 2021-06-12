@@ -24,10 +24,11 @@
         android:layout_below="@id/animate1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25sp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="@font/cairo"
         android:text="@string/welcome_Splash2"
         android:textColor="#0C0E15"
-        android:textSize="25sp" />
+        android:textSize="23sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/Welcome_text2"
@@ -36,9 +37,10 @@
         android:layout_below="@id/Welcome_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25sp"
-        android:fontFamily="sans-serif-condensed-medium"
+        android:fontFamily="@font/cairo"
         android:text="@string/welcome_2_Splash_2"
-        android:textSize="20sp" />
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animate2"

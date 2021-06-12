@@ -24,13 +24,20 @@
         android:id="@+id/text_name_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Name"
+        android:text="@string/your_name"
+        android:textSize="17sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/cairo"
+        />
     <TextView
         android:id="@+id/text_bio_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Bio"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="@font/cairo"
+        android:textSize="17sp"
+        />
 </LinearLayout>
