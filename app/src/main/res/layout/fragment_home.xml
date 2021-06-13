@@ -20,6 +20,7 @@
             app:civ_border_color="@color/black"
             app:civ_border_overlay="true"
             app:civ_border_width="1dp" />
+
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
@@ -27,11 +28,11 @@
             android:layout_below="@id/profile_photo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="@string/user_name"
             android:fontFamily="@font/cairo"
+            android:text="@string/user_name"
+            android:textColor="@color/black"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/user_bio"
@@ -40,11 +41,11 @@
             android:layout_below="@id/user_name"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="@string/Bio"
             android:fontFamily="@font/cairo"
+            android:text="@string/Bio"
+            android:textColor="@color/black"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -74,8 +75,7 @@
                 android:layout_margin="12dp"
                 app:cardBackgroundColor="#434175"
                 app:cardCornerRadius="5dp"
-                app:cardElevation="6dp"
-                >
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -88,12 +88,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/cairo"
                         android:gravity="center_horizontal"
                         android:text="@string/new_task"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="@font/cairo"
                         android:textSize="17sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -120,12 +120,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/cairo"
                         android:gravity="center_horizontal"
                         android:text="@string/task_manger"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="@font/cairo"
                         android:textSize="17sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -163,10 +163,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/cairo"
                         android:gravity="center_horizontal"
                         android:text="@string/About_us"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="@font/cairo"
                         android:textSize="17sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -194,10 +194,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/cairo"
                         android:gravity="center_horizontal"
                         android:text="@string/Feedback"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="@font/cairo"
                         android:textSize="17sp"
                         android:textStyle="bold" />
                 </LinearLayout>
