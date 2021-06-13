@@ -20,7 +20,6 @@ public class Splah_Dilog extends AppCompatActivity {
         } else {
             startActivity(new Intent(getApplicationContext(), Login_Sing_up_Activity.class));
         }
-        finish();
     }
 
 }

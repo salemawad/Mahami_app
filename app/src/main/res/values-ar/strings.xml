@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name" translatable="true">ادارة المهام</string>
     <string name="welcome_to_task_management">مرحبًا بك في تطبيق إدارة المهام </string>
     <string name="welcome_to_task_management2">هيا بنا >>></string>
     <string name="welcome_back">مرحبًا بك مرة أخرى </string>

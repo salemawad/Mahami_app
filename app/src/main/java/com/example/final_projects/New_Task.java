@@ -1,5 +1,6 @@
 package com.example.final_projects;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
+import es.dmoral.toasty.Toasty;
+
 public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener {
 
     private Button time_btn;
@@ -28,7 +31,6 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
     Calendar now = Calendar.getInstance();
     TimePickerDialog tpd;
     DatePickerDialog dpd;
-
     //=================================================================================
 
     @Override
@@ -41,6 +43,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         editName = findViewById(R.id.edit_name_new_task);
         editDis = findViewById(R.id.edit_dis_new_task);
         View_Task = findViewById(R.id.View_task);
+
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //===========================================================================
@@ -54,9 +57,9 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
 
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
                 if (CheckInsertData == true) {
-                    Toast.makeText(New_Task.this, "Successful entry", Toast.LENGTH_SHORT).show();
+                    Toasty.success(New_Task.this, "Successful Add The Task", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
+                    Toasty.error(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -122,13 +125,19 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         now.set(Calendar.HOUR_OF_DAY, hourOfDay);
         now.set(Calendar.MINUTE, minute);
 
+       Intent intent2 = new Intent(New_Task.this,List_Taksk.class);
+
+
         NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
                 .title(editName.getText().toString())
                 .content(editDis.getText().toString())
-                .color(255, 0, 0, 255)
-                .led_color(255, 255, 255, 255)
+                .color(13, 112, 242, 0)
                 .time(now)
-                .large_icon(R.drawable.ic_check_circle)
+                .large_icon(R.mipmap.ic_launcher_foreground)
+                .small_icon(R.drawable.notfication)
+                .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")//RRULE for frequency of notification
+                .addAction(intent2 ,"List Task" , false,true) //The action will call the intent when pressed
                 .build();
+        startActivity(intent2);
     }
 }

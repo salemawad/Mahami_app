@@ -49,8 +49,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.jakebonk:NotifyMe:1.0.1'
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
-
-
-
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
 
 }

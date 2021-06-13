@@ -14,7 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class Splash_Screen_1 extends AppCompatActivity {
-    final private static int SPLASH_SCREEN = 2500;
+    SharedPreferences preferences;
+    Boolean firstTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,27 +24,32 @@ public class Splash_Screen_1 extends AppCompatActivity {
         LottieAnimationView animationView = findViewById(R.id.animate1);
         TextView textView1 = findViewById(R.id.Welcome_text);
         TextView textView2 = findViewById(R.id.Welcome_text2);
-        // ==================================================================================================================
-        //this code for the splash screen what to do after finish it
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //This Code To Show The Activity Once When App Open For First Time
-                SharedPreferences preferences = getSharedPreferences("PREFERENCES", MODE_PRIVATE);
-                String FirstTimeInstall = preferences.getString("FirstTimeInstall", "");
 
-                //If App is was Opened For First Time Do It .....
-                if (FirstTimeInstall.equals("Yes")) {
-                    Intent intent2 = new Intent(Splash_Screen_1.this, Splash_Screen_2.class);
-                    startActivity(intent2);
-                } else {
-                    //Is Not Else ...... <_<
+        //This Code To Show The Activity Once When App Open For First Time
+        preferences = getSharedPreferences("PREFERENCES", MODE_PRIVATE);
+        firstTime = preferences.getBoolean("firstTime", true);
+        //If App is was Opened For First Time Do It .....
+        if (firstTime) {
+            //this code for the splash screen what to do after finish it
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
                     SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("FirstTimeInstall", "Yes");
+                    firstTime = false;
+                    editor.putBoolean("firstTime", false);
                     editor.apply();
+                    Intent intent = new Intent(Splash_Screen_1.this, Splash_Screen_2.class);
+                    startActivity(intent);
+                    finishAffinity();
+
                 }
-            }
-        }, SPLASH_SCREEN);
+            }, 5000);
+        } else {
+            //Is Not Else ...... <_<
+            Intent intent = new Intent(Splash_Screen_1.this, Splah_Dilog.class);
+            startActivity(intent);
+        }
+
         // ==================================================================================================================
         //Animation For the objects
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim);
@@ -58,8 +64,4 @@ public class Splash_Screen_1 extends AppCompatActivity {
         // ==================================================================================================================
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
 }
