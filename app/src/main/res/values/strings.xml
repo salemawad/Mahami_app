@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Task Management</string>
+    <string name="app_name" translatable="false"/>
     <string name="welcome_to_task_management" translatable="false">Welcome To Task Management App</string>
     <string name="welcome_to_task_management2">Lest Go >>></string>
     <string name="welcome_back" translatable="false">Welcome Back</string>
