@@ -22,12 +22,14 @@ public class List_Taksk extends AppCompatActivity {
         setContentView(R.layout.activity_list__taksk);
         tabLayout = findViewById(R.id.tap_layout);
         viewPager = findViewById(R.id.view_pager);
+        String NewList = getString(R.string.New_Task);
+        String LastList = getString(R.string.Last_Task);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Adapter home_pager_adapter = new Adapter(getSupportFragmentManager());
-        home_pager_adapter.AddFragment(new List_New_Task(), "New Task");
-        home_pager_adapter.AddFragment(new List_Last_Task(), "Last Task");
+        home_pager_adapter.AddFragment(new List_New_Task(), NewList);
+        home_pager_adapter.AddFragment(new List_Last_Task(), LastList);
 
         viewPager.setAdapter(home_pager_adapter);
         tabLayout.setupWithViewPager(viewPager);

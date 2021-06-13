@@ -48,6 +48,8 @@
     <string name="todo" translatable="false">TODO</string>
     <string name="your_name">Your Name</string>
     <string name="now">Now</string>
+    <string name="New_Task">New Task</string>
+    <string name="Last_Task">Last Task</string>
 
 
 </resources>

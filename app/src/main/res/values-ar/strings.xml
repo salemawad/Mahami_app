@@ -46,5 +46,6 @@
     <string name="view_task_on_db" >اظهار المهام</string>
     <string name="your_name">اسمك</string>
     <string name="now">الان</string>
-
+    <string name="New_Task">المهام الحالية</string>
+    <string name="Last_Task">المهام السابقة</string>
 </resources>
