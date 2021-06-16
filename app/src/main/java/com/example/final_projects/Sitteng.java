@@ -14,27 +14,32 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class Sitteng extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     Button btn_about, btn_account_setting, btn_setting_app;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sitteng);
+
+        //====================================Casting=============================================
         floatingActionButton = findViewById(R.id.floating);
         btn_about = findViewById(R.id.btn_about);
         btn_setting_app = findViewById(R.id.btn_setting_app);
         btn_account_setting = findViewById(R.id.btn_account_setting);
-        // code  is to make the Activity full screen
+
+        //=================================code  is to make the Activity full screen================================================
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        //========================================Button=========================================
         btn_setting_app.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          //      Intent intentss = new Intent(Sitteng.this, Application_Setting.class);
-           //     startActivity(intentss);
+                //      Intent intentss = new Intent(Sitteng.this, Application_Setting.class);
+                //     startActivity(intentss);
                 Toast.makeText(Sitteng.this, "aaaaaaa", Toast.LENGTH_SHORT).show();
             }
         });
 
-
+        //======================================Button===========================================
         btn_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,15 +47,19 @@ public class Sitteng extends AppCompatActivity {
                 startActivity(intent_about);
             }
         });
+
+        //===================================Button==============================================
         btn_account_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           //     Intent intent_account = new Intent(Sitteng.this, Profile_Fragment.class);
-           //     startActivity(intent_account);
+                //     Intent intent_account = new Intent(Sitteng.this, Profile_Fragment.class);
+                //     startActivity(intent_account);
                 Toast.makeText(Sitteng.this, "aaaaaaa", Toast.LENGTH_SHORT).show();
 
             }
         });
+
+        //=================================Button Share===============================================
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

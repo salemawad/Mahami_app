@@ -25,7 +25,11 @@ public class Home_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //====================================Casting=============================================
         final CardView new_text = view.findViewById(R.id.new_task);
+
+        //====================================Casting=============================================
         new_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,6 +38,7 @@ public class Home_Fragment extends Fragment {
 
             }
         });
+        //====================================Casting=============================================
         final CardView feedback = view.findViewById(R.id.feedback);
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,30 +49,28 @@ public class Home_Fragment extends Fragment {
             }
         });
 
-
+        //====================================Casting=============================================
         final CardView task_mange = view.findViewById(R.id.task_mange);
         task_mange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), List_Taksk.class);
+                Intent intent = new Intent(getActivity(), List_Taksk.class);
                 startActivity(intent);
 
             }
         });
 
+        //====================================Casting=============================================
         final CardView about_us = view.findViewById(R.id.about_us);
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), About_Us.class);
+                Intent intent = new Intent(getActivity(), About_Us.class);
                 startActivity(intent);
 
             }
         });
-
-
+        //====================================Casting=============================================
         return view;
-
-
     }
 }

@@ -31,8 +31,8 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
     Calendar now = Calendar.getInstance();
     TimePickerDialog tpd;
     DatePickerDialog dpd;
-    //=================================================================================
 
+    //======================================Casting===========================================
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +44,10 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         editDis = findViewById(R.id.edit_dis_new_task);
         View_Task = findViewById(R.id.View_task);
 
-        // code  is to make the Activity full screen
+        //============================== code  is to make the Activity full screen==============================================================
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //===========================================================================
-        //Listener For insert data into SQLite Database Table (UserDetails)
+
+        //=================================Listener For insert data into SQLite Database Table (UserDetails)==========================================
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,15 +56,15 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 String task_time_text = time_btn.getText().toString();
 
                 Boolean CheckInsertData = DB.InsertUserData(taskNameText, taskDesText);
-                if (CheckInsertData == true) {
+                if (CheckInsertData) {
                     Toasty.success(New_Task.this, "Successful Add The Task", Toast.LENGTH_SHORT).show();
                 } else {
                     Toasty.error(New_Task.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        //===========================================================================
-        //Listener For View data into SQLite Database Table (UserDetails)
+
+        //=================================Listener For View data into SQLite Database Table (UserDetails)==========================================
         View_Task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,16 +86,17 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 builder.show();
             }
         });
-        //get Current date and set it to DataPicker
+
+        //================================get Current date and set it to DataPicker=================================================
         Calendar now = Calendar.getInstance();
         dpd = DatePickerDialog.newInstance(
                 New_Task.this,
                 now.get(Calendar.YEAR), // Initial year selection
                 now.get(Calendar.MONTH), // Initial month selection
-                now.get(Calendar.DAY_OF_MONTH)// Inital day selection
+                now.get(Calendar.DAY_OF_MONTH)// Initial day selection
         );
 
-        //get Current Time and set it to DataPicker
+        //===============================get Current Time and set it to DataPicker==================================================
         tpd = TimePickerDialog.newInstance(
                 New_Task.this,
                 now.get(Calendar.HOUR_OF_DAY), // Initial Hour selection
@@ -103,15 +104,16 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 false
         );
 
+        //=================================Set Time Button Listener=============================================
         time_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dpd.show(getSupportFragmentManager(), "Datepickerdialog");
             }
         });
-
     }
 
+    //====================================DatePickerDialog==========================================
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         now.set(Calendar.YEAR, year);
@@ -120,14 +122,14 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         tpd.show(getSupportFragmentManager(), "Timepickerdialog");
     }
 
+    //===================================TimePickerDialog===========================================
     @Override
     public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
         now.set(Calendar.HOUR_OF_DAY, hourOfDay);
         now.set(Calendar.MINUTE, minute);
 
-       Intent intent2 = new Intent(New_Task.this,List_Taksk.class);
-
-
+        Intent intent2 = new Intent(New_Task.this, List_Taksk.class);
+        //==============================Notification Customize================
         NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
                 .title(editName.getText().toString())
                 .content(editDis.getText().toString())
@@ -136,7 +138,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 .large_icon(R.mipmap.ic_launcher_foreground)
                 .small_icon(R.drawable.notfication)
                 .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")//RRULE for frequency of notification
-                .addAction(intent2 ,"List Task" , false,true) //The action will call the intent when pressed
+                .addAction(intent2, "List Task", false, true) //The action will call the intent when pressed
                 .build();
         startActivity(intent2);
     }

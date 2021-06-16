@@ -14,6 +14,8 @@ public class Splah_Dilog extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splah__dilog);
+
+        //====================================Check if The User Have Login OR Not =============================================
         mAtu = FirebaseAuth.getInstance();
         if (mAtu.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));

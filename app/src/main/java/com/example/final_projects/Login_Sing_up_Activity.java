@@ -27,12 +27,12 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
 
-    //=================================================================================================
+    //=======================================Casting=====================================================
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__sing_up_);
 
-        // code  is to make the Activity full screen
+        //=======================================code  is to make the Activity full screen=====================================================
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         email = findViewById(R.id.edit_email);
@@ -126,14 +126,13 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
         });
     }
 
-    //==================================================================================================
+    //=======================================TO ENSURE THAT THE EMAIL IS A corrected EMAIL OR NOT===================================================
     //TO ENSURE THAT THE EMAIL IS A corrected EMAIL OR NOT
     public static boolean isValidEmail(String email) {
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
 
-    //==================================================================================================
-
+    //=================================================Show the progress bar onPause Call Method=================================================
     @Override
     protected void onPause() {
         super.onPause();
