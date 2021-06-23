@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Parcelable;
 
 import androidx.annotation.Nullable;
 
@@ -28,8 +27,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("drop Table if exists User_Task");
     }
 
-    //===========================================================================
-    //Method For Insert data into SQLite Database Table (UserDetails)
+    //============Method For Insert data into SQLite Database Table (UserDetails)===================
+    //
     public Boolean InsertUserData(String set_TaskName, String set_Description) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -43,8 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
-    //===========================================================================
-    //Method For Get data From SQLite Database Table (UserDetails) Using Cursor
+    //=============Method For Get data From SQLite Database Table (UserDetails) Using Cursor========
     public Cursor getData() {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor;
@@ -52,6 +50,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    //==============================================================================================
     public ArrayList<Tasks> getArray() {
         ArrayList<Tasks> tasks = new ArrayList<>();
         SQLiteDatabase DB = this.getReadableDatabase();

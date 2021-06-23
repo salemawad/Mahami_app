@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         loadLocal();
         setContentView(R.layout.activity_main);
         mAtu = FirebaseAuth.getInstance();
+
         //============================================Nav_Casting===========================================
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         name_header = findViewById(R.id.text_name_header);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         //============================================Nav_Config===========================================
         navigationView.setNavigationItemSelectedListener(MainActivity.this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -63,48 +65,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        String text = extra.getString("Next Screen");
 //        name_header.setText(text);
     }
-    //============================================Nav_Config===========================================
 
+    //============================================Nav_Fragment_Config ===========================================
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()) {
-            case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Home_Fragment()).commit();
-                break;
+        if (item.getItemId() == R.id.nav_home) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new Home_Fragment()).commit();
         }
-        switch (item.getItemId()) {
-            case R.id.nav_profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Profile_Fragment()).commit();
-                break;
+        if (item.getItemId() == R.id.nav_profile) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new Profile_Fragment()).commit();
         }
-        switch (item.getItemId()) {
-            case R.id.nav_Language:
-                Showdialog();
-                break;
+        if (item.getItemId() == R.id.nav_Language) {
+            ShowDialog();
         }
-        switch (item.getItemId()) {
-            case R.id.nav_sitting:
-                Intent intent = new Intent(MainActivity.this, Sitteng.class);
-                startActivity(intent);
-                break;
+        if (item.getItemId() == R.id.nav_sitting) {
+            Intent intent = new Intent(MainActivity.this, Sitteng.class);
+            startActivity(intent);
         }
-        switch (item.getItemId()) {
-            case R.id.nav_about_us:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new About_Us_Fragment()).commit();
-                break;
+        if (item.getItemId() == R.id.nav_about_us) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new About_Us_Fragment()).commit();
         }
-        switch (item.getItemId()) {
-            case R.id.nav_share:
-                Intent share = new Intent(Intent.ACTION_SEND);
-                share.setType("text/plan");
-                String shareBody = "Task Management";
-                share.putExtra(Intent.EXTRA_SUBJECT, shareBody);
-                startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
-                break;
+        if (item.getItemId() == R.id.nav_share) {
+            Intent share = new Intent(Intent.ACTION_SEND);
+            share.setType("text/plan");
+            String shareBody = "Task Management";
+            share.putExtra(Intent.EXTRA_SUBJECT, shareBody);
+            startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
         }
         if (item.getItemId() == R.id.nav_logout) {
 
@@ -117,9 +107,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
 
     }
-    //============================================Language_Config===========================================
 
-    private void Showdialog() {
+    //============================================Language_Config===========================================
+    private void ShowDialog() {
         final String[] lis_String = {"Arabic", "English"};
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Change in progress");
@@ -133,14 +123,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     setLocal("EN");
                     recreate();
                 }
+                recreate();
                 dialog.dismiss();
             }
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
     }
 
+    //============================================================================================
     private void setLocal(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
@@ -155,13 +146,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    // load language saved in shared preferences
+    //==========================================load language saved in shared preferences==================================================
     public void loadLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE);
         String language = sharedPreferences.getString("lang", "");
         setLocal(language);
     }
 
+    //============================================================================================
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {

@@ -23,6 +23,7 @@ public class Feedback_Ativity extends AppCompatActivity {
         input=findViewById(R.id.input);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //==========================================Simile Rating Code===================================================
         smileyRating.setSmileySelectedListener(new SmileyRating.OnSmileySelectedListener() {
             @Override
             public void onSmileySelected(SmileyRating.Type type) {

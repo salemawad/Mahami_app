@@ -41,16 +41,18 @@ public class Profile_Fragment extends Fragment implements IPickResult {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
 
+        //====================================Casting=============================================
         Photo = view.findViewById(R.id.profile_photo);
         sendPhoto = view.findViewById(R.id.Upload_Photo_btn);
         firebaseStorage = FirebaseStorage.getInstance();
         reference = firebaseStorage.getReferenceFromUrl("gs://final-projects-2-73b2b.appspot.com/");
 
+        //====================================Casting=============================================
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Uploading..");
         progressDialog.setCancelable(false);
 
-
+        //====================================Casting=============================================
         Photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +60,7 @@ public class Profile_Fragment extends Fragment implements IPickResult {
             }
         });
 
+        //====================================Casting=============================================
         //Upload Image to fireStorage
         sendPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +102,7 @@ public class Profile_Fragment extends Fragment implements IPickResult {
         return view;
     }
 
+    //====================================Casting=============================================
     @Override
     public void onPickResult(PickResult r) {
         Photo.setImageBitmap(r.getBitmap());

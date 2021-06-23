@@ -26,11 +26,11 @@ public class List_Taksk extends AppCompatActivity {
         String LastList = getString(R.string.Last_Task);
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        //=================================================================================================
         Adapter home_pager_adapter = new Adapter(getSupportFragmentManager());
         home_pager_adapter.AddFragment(new List_New_Task(), NewList);
         home_pager_adapter.AddFragment(new List_Last_Task(), LastList);
-
+        //=================================================================================================
         viewPager.setAdapter(home_pager_adapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setText(home_pager_adapter.getFragmentTitle(0));

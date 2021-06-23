@@ -1,8 +1,5 @@
 package com.example.final_projects;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,8 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,6 +34,7 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
     Button sendPhoto;
     PickResult r;
 
+    //=======================================Casting=====================================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,22 +44,21 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
         sendPhoto = findViewById(R.id.Upload_Photo);
         firebaseStorage = FirebaseStorage.getInstance();
         reference = firebaseStorage.getReferenceFromUrl("gs://final-projects-2-73b2b.appspot.com/");
-
+        //============================================================================================
         // code  is to make the Activity full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        //=======================================progressDialog for uploading profile photo=====================================================
         progressDialog = new ProgressDialog(login_detiles.this);
         progressDialog.setMessage("Uploading..");
-        progressDialog.setCancelable(false);
-
+        progressDialog.setCancelable(false);;
+        //======================================When click Image View Use PickerImageDialog library to access to Gallery and pick image ======================================================
         Photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PickImageDialog.build(new PickSetup()).show(login_detiles.this);
             }
         });
-
-        //Upload Image to fireStorage
+        //====================================Upload Image to fireStorage========================================================
         sendPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,8 +91,8 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                 }
             }
         });
-
     }
+    //======================================to Show Image That Choose On Image View======================================================
     public void onPickResult(PickResult r) {
         Photo.setImageBitmap(r.getBitmap());
         userImage = r.getUri();
