@@ -1,64 +1,79 @@
 package com.example.final_projects;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.Switch;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import java.util.Locale;
+
 
 public class Sitteng extends AppCompatActivity {
-    FloatingActionButton floatingActionButton;
-    Button btn_about, btn_account_setting, btn_setting_app;
+
+    Switch Switch1;
+    TextView lang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sitteng);
-        floatingActionButton = findViewById(R.id.floating);
-        btn_about = findViewById(R.id.btn_about);
-        btn_setting_app = findViewById(R.id.btn_setting_app);
-        btn_account_setting = findViewById(R.id.btn_account_setting);
-        // code  is to make the Activity full screen
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        btn_setting_app.setOnClickListener(new View.OnClickListener() {
+        lang =findViewById(R.id.lang);
+        loadLocal();
+        lang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          //      Intent intentss = new Intent(Sitteng.this, Application_Setting.class);
-           //     startActivity(intentss);
-                Toast.makeText(Sitteng.this, "aaaaaaa", Toast.LENGTH_SHORT).show();
+                ShowDialog();
             }
         });
 
+    }
+    private void ShowDialog() {
+        final String[] lis_String = {"Arabic", "English"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(Sitteng.this);
+        builder.setTitle("Change in progress");
+        builder.setSingleChoiceItems(lis_String, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == 0) {
+                    setLocal("AR");
+                    recreate();
+                } else {
+                    setLocal("EN");
+                    recreate();
+                }
+                recreate();
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
-        btn_about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_about = new Intent(Sitteng.this, About_Us.class);
-                startActivity(intent_about);
-            }
-        });
-        btn_account_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-           //     Intent intent_account = new Intent(Sitteng.this, Profile_Fragment.class);
-           //     startActivity(intent_account);
-                Toast.makeText(Sitteng.this, "aaaaaaa", Toast.LENGTH_SHORT).show();
+    //============================================================================================
+    private void setLocal(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
 
-            }
-        });
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent share = new Intent(Intent.ACTION_SEND);
-                share.setType("text/plan");
-                share.putExtra(Intent.EXTRA_SUBJECT, "ShearApp");
-                startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
-            }
-        });
+        //save data to shared preferences
+        SharedPreferences.Editor editor = getSharedPreferences("Setting", MODE_PRIVATE).edit();
+        editor.putString("lang", lang);
+        editor.apply();
+
+    }
+
+    //==========================================load language saved in shared preferences==================================================
+    public void loadLocal() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE);
+        String language = sharedPreferences.getString("lang", "");
+        setLocal(language);
     }
 }
