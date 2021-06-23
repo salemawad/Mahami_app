@@ -33,7 +33,6 @@
     <string name="forgetpssowrd">ForgetPssowrd ?</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
-    <string name="language">Language</string>
     <string name="sitting">Sitting</string>
     <string name="communicate">Communicate</string>
     <string name="about_us">About Us</string>
@@ -50,6 +49,12 @@
     <string name="now">Now</string>
     <string name="New_Task">New Task</string>
     <string name="Last_Task">Last Task</string>
+    <string name="setting">Setting</string>
+    <string name="notification">Notification</string>
+    <string name="language">Language</string>
+    <string name="sofety">Sofety</string>
+    <string name="privacy_policy">privacy policy</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
 
 
 </resources>
