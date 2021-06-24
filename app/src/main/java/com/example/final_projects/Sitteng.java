@@ -34,10 +34,12 @@ public class Sitteng extends AppCompatActivity {
                 ShowDialog();
             }
         });
+
     }
 
+
     //==============================================================================================
-    private void ShowDialog() {
+    public void ShowDialog() {
         final String[] lis_String = {"Arabic", "English"};
         AlertDialog.Builder builder = new AlertDialog.Builder(Sitteng.this);
         builder.setTitle("Change in progress");
@@ -60,7 +62,7 @@ public class Sitteng extends AppCompatActivity {
     }
 
     //==============================================================================================
-    private void setLocal(String lang) {
+    public void setLocal(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
         Configuration configuration = new Configuration();

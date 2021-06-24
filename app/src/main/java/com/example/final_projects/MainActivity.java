@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.final_projects.Fragment.About_Us_Fragment;
 import com.example.final_projects.Fragment.Home_Fragment;
 import com.example.final_projects.Fragment.Profile_Fragment;
-import com.example.final_projects.Fragment.Sitting_Fragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        drawer.setDrawerTitle(0,"Home");
-
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -76,11 +74,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (item.getItemId() == R.id.nav_home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new Home_Fragment()).commit();
-
+            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setCustomView(R.layout.home_title);
         }
         if (item.getItemId() == R.id.nav_profile) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new Profile_Fragment()).commit();
+            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setCustomView(R.layout.profile_title);
 
         }
         if (item.getItemId() == R.id.nav_Language) {
@@ -88,13 +89,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (item.getItemId() == R.id.nav_sitting) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new Sitting_Fragment()).commit();
+            Intent intent = new Intent(MainActivity.this, Sitteng.class);
+            startActivity(intent);
         }
 
         if (item.getItemId() == R.id.nav_about_us) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new About_Us_Fragment()).commit();
+            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setCustomView(R.layout.abou_us_title);
         }
 
         if (item.getItemId() == R.id.nav_share) {

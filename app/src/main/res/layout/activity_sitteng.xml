@@ -52,11 +52,13 @@
                 android:fontFamily="@font/cairo"
                 android:padding="14dp"
                 android:text="@string/language"
+                android:clickable="true"
                 android:textColor="#464647"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:drawableLeftCompat="@drawable/ic_language"
-                app:drawableRightCompat="@drawable/ic_baseline_navigate_next_24" />
+                app:drawableRightCompat="@drawable/ic_baseline_navigate_next_24"
+                android:focusable="true" />
 
         </LinearLayout>
 
