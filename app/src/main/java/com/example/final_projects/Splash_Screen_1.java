@@ -41,7 +41,7 @@ public class Splash_Screen_1 extends AppCompatActivity {
                     editor.apply();
                     Intent intent = new Intent(Splash_Screen_1.this, Splash_Screen_2.class);
                     startActivity(intent);
-                    finishAffinity();
+                    finish();
 
                 }
             }, 5000);
@@ -49,6 +49,7 @@ public class Splash_Screen_1 extends AppCompatActivity {
             //======Is Not Else ...... <_<=======
             Intent intent = new Intent(Splash_Screen_1.this, Splah_Dilog.class);
             startActivity(intent);
+            finish();
         }
 
         // =====================================Animation For the objects====================================================

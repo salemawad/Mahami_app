@@ -43,22 +43,14 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("wait a moment");
         progressDialog.setCancelable(false);
-        //=============================================Register button=================================
+
+
         SingUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // get email and password and send it to firebase by the log in button
-                String email_1 = email.getText() + "";
-                String password = pass.getText() + "";
-                // عمل تحقق للايميل والباسورد اذا كانو نفس عدد الكاركتير المحدد والصحة كتابة الايمل
-                if (isValidEmail(email_1) && password.length() >= 6) {
-                    newuser(email_1, password);
-                } else {
-                    if (!isValidEmail(email_1))
-                        email.setError("The e-mail does not match the e-mail format");
-                    else
-                        pass.setError("Enter a password of 6 numbers or above");
-                }
+                Intent intent = new Intent(Login_Sing_up_Activity.this,login_detiles.class);
+                startActivity(intent);
+                finish();
             }
         });
         //=============================================LogIn button===========================
@@ -103,28 +95,7 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
         });
     }
 
-    //==============================register method==========================================================
-    private void newuser(String email, String password) {
-        progressDialog.show();
-        mAtu.createUserWithEmailAndPassword(email, password)
-                //call back method
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        progressDialog.dismiss();
-                        finish();
-                        Intent intent = new Intent(getApplicationContext(), Login_Sing_up_Activity.class);
-                        startActivity(intent);
-                        Toast.makeText(Login_Sing_up_Activity.this, "Welcome To Our Community", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                progressDialog.dismiss();
-                Toast.makeText(Login_Sing_up_Activity.this, e.getMessage() + "", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+
 
     //=======================================TO ENSURE THAT THE EMAIL IS A corrected EMAIL OR NOT===================================================
     //TO ENSURE THAT THE EMAIL IS A corrected EMAIL OR NOT
@@ -140,6 +111,5 @@ public class Login_Sing_up_Activity extends AppCompatActivity {
             progressDialog.dismiss();
         }
     }
-
 }
 

@@ -22,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.final_projects.Fragment.About_Us_Fragment;
 import com.example.final_projects.Fragment.Home_Fragment;
 import com.example.final_projects.Fragment.Profile_Fragment;
+import com.example.final_projects.Fragment.Sitting_Fragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        drawer.setDrawerTitle(0,"Home");
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -73,22 +76,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (item.getItemId() == R.id.nav_home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new Home_Fragment()).commit();
+
         }
         if (item.getItemId() == R.id.nav_profile) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new Profile_Fragment()).commit();
+
         }
         if (item.getItemId() == R.id.nav_Language) {
             ShowDialog();
         }
+
         if (item.getItemId() == R.id.nav_sitting) {
-            Intent intent = new Intent(MainActivity.this, Sitteng.class);
-            startActivity(intent);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new Sitting_Fragment()).commit();
         }
+
         if (item.getItemId() == R.id.nav_about_us) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new About_Us_Fragment()).commit();
         }
+
         if (item.getItemId() == R.id.nav_share) {
             Intent share = new Intent(Intent.ACTION_SEND);
             share.setType("text/plan");
@@ -96,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             share.putExtra(Intent.EXTRA_SUBJECT, shareBody);
             startActivity(Intent.createChooser(share, "اختر التطبيق للمشاركة"));
         }
+
         if (item.getItemId() == R.id.nav_logout) {
 
             Toast.makeText(MainActivity.this, "LogOut", Toast.LENGTH_SHORT).show();

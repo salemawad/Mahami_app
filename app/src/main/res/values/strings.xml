@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name" translatable="true">Task Manage</string>
-    <string name="welcome_to_task_management" translatable="false">Welcome To Task Management App</string>
-    <string name="welcome_to_task_management2">Lest Go >>></string>
-    <string name="welcome_back" translatable="false">Welcome Back</string>
+    <string name="app_name" translatable="false">Mahami</string>
+    <string name="welcome_to_task_management" translatable="false">Welcome To Mahami App</string>
+    <string name="welcome_to_task_management2" translatable="false">Lest Go >>></string>
+    <string name="welcome_back" translatable="true">Welcome Back</string>
     <string name="welcome_Splash2" translatable="false">Leave all your tasks to us</string>
     <string name="welcome_2_Splash_2" translatable="false">We manage all your tasks properly </string>
     <string name="navigation_drawer_open"> Open navigation drawer</string>
@@ -18,6 +18,7 @@
     <string name="user_name">User Name</string>
     <string name="set_data">Set Date</string>
     <string name="Submit">Submit</string>
+    <string name="Update">Update</string>
     <string name="task_name">Task Name</string>
     <string name="description">Description</string>
     <string name="set_time">Set Time</string>
@@ -29,7 +30,8 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">LogIn</string>
-    <string name="singup">SingUp</string>
+    <string name="singup">Sing Up Now</string>
+    <string name="singup2">Sing Up </string>
     <string name="forgetpssowrd">ForgetPssowrd ?</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
@@ -52,9 +54,10 @@
     <string name="setting">Setting</string>
     <string name="notification">Notification</string>
     <string name="language">Language</string>
-    <string name="sofety">Sofety</string>
+    <string name="safety">Safety</string>
     <string name="privacy_policy">privacy policy</string>
     <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="dont_have_account_yet">don\'t have account yet ?</string>
 
 
 </resources>

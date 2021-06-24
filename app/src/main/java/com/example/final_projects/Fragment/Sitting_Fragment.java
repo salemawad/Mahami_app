@@ -11,14 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.final_projects.R;
 
-public class Profile_Fragment extends Fragment {
-
+public class Sitting_Fragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile,container,false);
-        return view;
+        return inflater.inflate(R.layout.activity_sitteng, container, false);
     }
-
 }
-

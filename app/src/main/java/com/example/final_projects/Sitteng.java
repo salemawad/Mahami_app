@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Switch;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -17,13 +17,16 @@ import java.util.Locale;
 
 public class Sitteng extends AppCompatActivity {
 
-    Switch Switch1;
     TextView lang;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sitteng);
-        lang =findViewById(R.id.lang);
+        //===========================code  is to make the Activity full screen======================
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        lang = findViewById(R.id.lang);
+        //==========================================================================================
         loadLocal();
         lang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,8 +34,9 @@ public class Sitteng extends AppCompatActivity {
                 ShowDialog();
             }
         });
-
     }
+
+    //==============================================================================================
     private void ShowDialog() {
         final String[] lis_String = {"Arabic", "English"};
         AlertDialog.Builder builder = new AlertDialog.Builder(Sitteng.this);
@@ -55,7 +59,7 @@ public class Sitteng extends AppCompatActivity {
         alertDialog.show();
     }
 
-    //============================================================================================
+    //==============================================================================================
     private void setLocal(String lang) {
         Locale locale = new Locale(lang);
         Locale.setDefault(locale);
@@ -70,7 +74,7 @@ public class Sitteng extends AppCompatActivity {
 
     }
 
-    //==========================================load language saved in shared preferences==================================================
+    //==============================load language saved in shared preferences=======================
     public void loadLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE);
         String language = sharedPreferences.getString("lang", "");

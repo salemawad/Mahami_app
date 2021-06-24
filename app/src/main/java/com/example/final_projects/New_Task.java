@@ -76,8 +76,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 StringBuilder buffer = new StringBuilder();
                 while (res.moveToNext()) {
                     buffer.append("Task Name :").append(res.getString(0)).append("\n");
-                    buffer.append("Description :").append(res.getString(1)).append("\n");
-                    //   buffer.append("Time Of Task :").append(res.getString(3)).append("\n");
+                    buffer.append("Description :").append(res.getString(1)).append("\n \n");
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(New_Task.this);
                 builder.setCancelable(true);
@@ -128,7 +127,6 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
         now.set(Calendar.HOUR_OF_DAY, hourOfDay);
         now.set(Calendar.MINUTE, minute);
 
-        Intent intent2 = new Intent(New_Task.this, List_Taksk.class);
         //==============================Notification Customize================
         NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
                 .title(editName.getText().toString())
@@ -138,8 +136,7 @@ public class New_Task extends AppCompatActivity implements TimePickerDialog.OnTi
                 .large_icon(R.mipmap.ic_launcher_foreground)
                 .small_icon(R.drawable.notfication)
                 .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")//RRULE for frequency of notification
-                .addAction(intent2, "List Task", false, true) //The action will call the intent when pressed
+                .addAction(new Intent(),"List Task") //The action will call the intent when pressed
                 .build();
-        startActivity(intent2);
     }
 }

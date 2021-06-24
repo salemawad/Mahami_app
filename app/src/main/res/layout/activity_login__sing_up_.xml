@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="rtl"
     tools:context=".Login_Sing_up_Activity">
 
     <TextView
@@ -62,12 +61,11 @@
 
     <Button
         android:id="@+id/Login"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_pass"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
         android:background="@drawable/login_btn_background"
         android:fontFamily="@font/cairo"
         android:text="@string/login"
@@ -75,18 +73,29 @@
         android:textSize="15sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/text_singup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:fontFamily="@font/cairo"
+        android:text="@string/dont_have_account_yet"
+        android:textSize="16sp" />
+
     <Button
         android:id="@+id/Singup1"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_pass"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/login_btn_background"
+        android:layout_below="@id/text_singup"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background"
         android:fontFamily="@font/cairo"
         android:text="@string/singup"
-        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textColor="#3E3E3E"
         android:textSize="15sp"
         android:textStyle="bold" />
+
 </RelativeLayout>

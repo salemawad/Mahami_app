@@ -19,9 +19,12 @@ public class Splah_Dilog extends AppCompatActivity {
         mAtu = FirebaseAuth.getInstance();
         if (mAtu.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         } else {
             startActivity(new Intent(getApplicationContext(), Login_Sing_up_Activity.class));
+            finish();
         }
+
     }
 
 }
