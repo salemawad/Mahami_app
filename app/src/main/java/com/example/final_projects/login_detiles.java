@@ -43,7 +43,7 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
     private CircleImageView Photo;
     Button sendPhoto;
     EditText email, pass, Name, Bio;
-    Button SingUp;
+    Button SingUp , Submit;
     ImageView profile;
     FirebaseAuth mAtu;
     User_DataBase dataBase;
@@ -61,6 +61,7 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
         reference = firebaseStorage.getReferenceFromUrl("gs://final-projects-2-73b2b.appspot.com/");
         mAtu = FirebaseAuth.getInstance();
         SingUp = findViewById(R.id.Submit_Button_2);
+        Submit = findViewById(R.id.Submit_Button_3);
         email = findViewById(R.id.edit_email_3);
         pass = findViewById(R.id.edit_pass_3);
         Name = findViewById(R.id.edit_name_sing);
@@ -132,6 +133,11 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                     else
                         pass.setError("Enter a password of 6 numbers or above");
                 }
+            }
+        });
+        Submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 String name = Name.getText().toString();
                 String bio = Bio.getText().toString();
 
@@ -143,7 +149,10 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                 }
             }
         });
+
+
     }
+
 
     //==============================register method==========================================================
     private void new_user(String email, String password) {

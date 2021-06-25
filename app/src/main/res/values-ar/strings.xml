@@ -56,4 +56,5 @@
     <string name="terms_and_conditions">البنود والشروط</string>
     <string name="dont_have_account_yet">لا تمتلك حساب بعد ؟.</string>
     <string name="singup2">التسجيل</string>
+    <string name="submit_user_name">تسجيل الاسم</string>
 </resources>

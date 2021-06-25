@@ -58,6 +58,7 @@
     <string name="privacy_policy">privacy policy</string>
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="dont_have_account_yet">don\'t have account yet ?</string>
+    <string name="submit_user_name">Submit Name</string>
 
 
 </resources>
