@@ -33,7 +33,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edit_name"
+        android:id="@+id/edit_name_sing"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_below="@id/profile_photo_2"
@@ -55,7 +55,7 @@
         android:id="@+id/edit_desc_1"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_below="@id/edit_name"
+        android:layout_below="@id/edit_name_sing"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20sp"
         android:autofillHints="0"

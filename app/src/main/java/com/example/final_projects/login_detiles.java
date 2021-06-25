@@ -11,11 +11,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.final_projects.Users_Details.User_DataBase;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -29,6 +31,7 @@ import com.vansuita.pickimage.dialog.PickImageDialog;
 import com.vansuita.pickimage.listeners.IPickResult;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import es.dmoral.toasty.Toasty;
 
 public class login_detiles extends AppCompatActivity implements IPickResult {
 
@@ -39,9 +42,11 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
     ProgressDialog progressDialog_photo;
     private CircleImageView Photo;
     Button sendPhoto;
-    EditText email, pass;
+    EditText email, pass, Name, Bio;
     Button SingUp;
+    ImageView profile;
     FirebaseAuth mAtu;
+    User_DataBase dataBase;
 
 
     //=======================================Casting=====================================================
@@ -58,6 +63,8 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
         SingUp = findViewById(R.id.Submit_Button_2);
         email = findViewById(R.id.edit_email_3);
         pass = findViewById(R.id.edit_pass_3);
+        Name = findViewById(R.id.edit_name_sing);
+        Bio = findViewById(R.id.edit_desc_1);
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Wait A Moment...");
         progressDialog.setCancelable(false);
@@ -92,7 +99,7 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                                 public void onSuccess(Uri uri) {
                                     progressDialog_photo.dismiss();
                                     Log.e("MAS_IMAGE_PATH", uri + "");
-                                    Toast.makeText(login_detiles.this, "Success", Toast.LENGTH_SHORT).show();
+                                    Toasty.error(login_detiles.this, "Sing Up", Toasty.LENGTH_LONG).show();
                                 }
                             });
                         }
@@ -104,7 +111,7 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                         }
                     });
                 } else {
-                    Toast.makeText(login_detiles.this, "Add image first", Toast.LENGTH_SHORT).show();
+                    Toasty.error(login_detiles.this, "Add image first", Toasty.LENGTH_SHORT).show();
                 }
             }
         });
@@ -118,18 +125,28 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                 String password = pass.getText() + "";
                 // عمل تحقق للايميل والباسورد اذا كانو نفس عدد الكاركتير المحدد والصحة كتابة الايمل
                 if (isValidEmail(email_1) && password.length() >= 6) {
-                    newuser(email_1, password);
+                    new_user(email_1, password);
                 } else {
                     if (!isValidEmail(email_1))
                         email.setError("The e-mail does not match the e-mail format");
                     else
                         pass.setError("Enter a password of 6 numbers or above");
                 }
+                String name = Name.getText().toString();
+                String bio = Bio.getText().toString();
+
+                Boolean CheckInsertData = dataBase.InsertUserData(name,bio);
+                if (CheckInsertData == true) {
+                    Toast.makeText(login_detiles.this, "Successful entry", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(login_detiles.this, "An error occurred while entering", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
+
     //==============================register method==========================================================
-    private void newuser(String email, String password) {
+    private void new_user(String email, String password) {
         progressDialog.show();
         mAtu.createUserWithEmailAndPassword(email, password)
                 //call back method
@@ -137,14 +154,16 @@ public class login_detiles extends AppCompatActivity implements IPickResult {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         progressDialog.dismiss();
-                        Intent intent = new Intent(login_detiles.this, login_detiles.class);
+                        Intent intent = new Intent(login_detiles.this, Login_Sing_up_Activity.class);
                         startActivity(intent);
+                        Toasty.success(login_detiles.this, "Sing Up Success", Toasty.LENGTH_LONG).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 progressDialog.dismiss();
-                Toast.makeText(login_detiles.this, e.getMessage() + "", Toast.LENGTH_SHORT).show();
+                Toasty.error(login_detiles.this, "Sing Up Error !", Toasty.LENGTH_LONG).show();
+
             }
         });
     }
